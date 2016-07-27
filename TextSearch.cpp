@@ -1,9 +1,9 @@
+#include "TextSearch.h"
 #include <iostream>
-#include "main.h"
 
 using namespace std;
 
-main() {
+int main() {
     cout << "Hello World!";
     return 0;
 }
