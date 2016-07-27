@@ -1,6 +1,6 @@
 
 all:
-	$(CXX) -pthread -std=c++11 -Wall -Wextra main.cpp -o main
+	$(CXX) -pthread -std=c++11 -Wall -Wextra TextSearch.cpp -o TextSearch
 
 test:
-	 ./main || exit 1
+	 ./TextSearch || exit 1
