@@ -2,9 +2,9 @@ language: cpp
 compiler: g++
 
 before_install:
+- chmod +x build.sh
 - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
 - sudo apt-get update -qq
- - chmod +x build.sh
  
 install:
 - sudo apt-get install -qq g++-4.8
