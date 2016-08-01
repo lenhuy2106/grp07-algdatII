@@ -24,9 +24,7 @@ class KnuthMorrisPratt{
 
     public:
         
-        KnuthMorrisPratt(string t, string p) {
-            this->text = t;
-            this->pattern = p;
+        KnuthMorrisPratt(string t, string p) : text(t), pattern(p){
             run();
         }
                 
