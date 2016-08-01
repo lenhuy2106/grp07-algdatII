@@ -10,10 +10,10 @@ class TextSearch {
 private:
 
     string text;
-    void readFile(const string);
 
 public:
 
+    void readFile(const string);
     void setText(const string text) {this->text = text;};
     string getText() {return text;};
 };

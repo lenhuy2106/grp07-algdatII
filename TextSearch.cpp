@@ -1,10 +1,11 @@
 #include "TextSearch.h"
+#include "KnuthMorrisPratt.h"
 #include <fstream>
 #include <iostream>
 
 using namespace std;
 
-void readFile(const string inputFile) {
+void TextSearch::readFile(const string inputFile) {
     ifstream ifStream;
     string s;
     string result;
@@ -18,8 +19,9 @@ void readFile(const string inputFile) {
             result.append(s);
         }
         ifStream.close();
-
-        cout << result << endl;
+        
+        setText(result);      
+        
         cout << "file read" << endl;
     } else {
         cout << "File not found" << endl;
@@ -28,12 +30,19 @@ void readFile(const string inputFile) {
 
 int main() {
     string input;
-
+    TextSearch textSearch;
+    
     cout << "Hallo Dudeberger, gib mal Textdatei !" << endl;
     cin >> input;
     cout << input << endl;
 
-    readFile(input);
-
+    textSearch.readFile(input);
+    
+    cout << "Nach welchem Pattern soll gesucht werden?" << endl;
+    cin >> input;
+    cout << input << endl;
+    
+    KnuthMorrisPratt(textSearch.getText(), input);
+    
     return 0;
 }
