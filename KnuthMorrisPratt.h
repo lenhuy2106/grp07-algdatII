@@ -4,6 +4,7 @@
 
 #ifndef GRP07_ALGDATII_KNUTHMORRISPRATT_H
 #define GRP07_ALGDATII_KNUTHMORRISPRATT_H
+#include <string>
 
 using namespace std;
 
