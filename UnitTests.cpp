@@ -11,7 +11,9 @@
 using namespace std;
 
 TEST(naiveAlgorithm, run) {
-    vector<int> firstIndices = Naive("lorem ipsum alta ipsum fef", "ipsum").run();
+    vector<int> firstIndices = Naive("lorem ipsum alta ipsum fef ipsu", "ipsum").run();
+
+    ASSERT_FALSE(firstIndices.empty());
 
     ASSERT_EQ(6, firstIndices.at(0));
     ASSERT_EQ(17, firstIndices.at(1));
@@ -23,7 +25,9 @@ TEST(naiveAlgorithm, run) {
 }
 
 TEST(kmpAlgorithm, run) {
-    vector<int> firstIndices = Naive("lorem ipsum alta ipsum fef", "ipsum").run();
+    vector<int> firstIndices = KnuthMorrisPratt("lorem ipsum alta ipsum fef ipsu", "ipsum").run();
+
+    ASSERT_FALSE(firstIndices.empty());
 
     ASSERT_EQ(6, firstIndices.at(0));
     ASSERT_EQ(17, firstIndices.at(1));

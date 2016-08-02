@@ -53,14 +53,6 @@ class KnuthMorrisPratt{
 
         void writeHtmlFile(double elapsedTime);
 
-        /**
-         * Führt KMP-Algorithmus mehrmals aus,
-         * berchnet Anzahl gefundener Strings, 
-         * loggt Ergebnisse auf der Konsole
-         * und erzeugt ein HTML-File als Output
-         */
-        void run();
-
     public:
 
         /**
@@ -69,8 +61,14 @@ class KnuthMorrisPratt{
          * @param p Der zu suchende String.
          */
         KnuthMorrisPratt(string t, string p) : text(t), pattern(p){
-            run();
         }
+        /**
+         * Führt KMP-Algorithmus mehrmals aus,
+         * berchnet Anzahl gefundener Strings,
+         * loggt Ergebnisse auf der Konsole
+         * und erzeugt ein HTML-File als Output
+         */
+        vector<int> run();
 };
 
 #endif //GRP07_ALGDATII_KNUTHMORRISPRATT_H

@@ -71,7 +71,7 @@ void KnuthMorrisPratt::writeHtmlFile(double elapsedTime) {
     myfile.close();
 }
 
-void KnuthMorrisPratt::run() {
+vector<int> KnuthMorrisPratt::run() {
 
     generatePrefixTable();
 
@@ -123,5 +123,5 @@ void KnuthMorrisPratt::run() {
     cout << " times\n";
 
     writeHtmlFile(elapsedTime.count());
-
+    return indices;
 }
