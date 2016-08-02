@@ -76,7 +76,6 @@ void KnuthMorrisPratt::run() {
     
     counter = 0;
     htmlOutput = "";
-    
     string subText = string(text);
     
     while(result >= 0) {

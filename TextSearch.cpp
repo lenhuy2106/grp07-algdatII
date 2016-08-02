@@ -42,7 +42,7 @@ int main() {
     cout << "Nach welchem Pattern soll gesucht werden? " << endl;
     cin >> input;
     cout << input << endl;
-    
+
     cout << "Mit welchem Algorithmus soll die Textdatei dursucht werden?" << endl;
     cout << "0 : Naiver-Algorithmus" << endl;
     cout << "1 : Knuth-Morris-Pratt-Algorithmus" << endl;
