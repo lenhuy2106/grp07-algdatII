@@ -132,6 +132,6 @@ void BoyerMooreHorspool::run() {
     cout << counter;
     cout << " times\n";
 
-    writeHtmlFile(elapsedTime);
+    writeHtmlFile(elapsedTime.count());
 
 }
