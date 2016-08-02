@@ -50,7 +50,7 @@ class KnuthMorrisPratt{
          */
         int doKMPAlgorithmn(string subText);
 
-        void writeHtmlFile();
+        void writeHtmlFile(double elapsedTime);
 
         /**
          * Führt KMP-Algorithmus mehrmals aus,

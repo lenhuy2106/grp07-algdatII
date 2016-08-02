@@ -30,6 +30,7 @@ void TextSearch::readFile(const string inputFilePath) {
 }
 
 int main() {
+    
     string input;
     int i;
     TextSearch textSearch;
@@ -62,5 +63,4 @@ int main() {
         default:
             break;
     }
-        
 }

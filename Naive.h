@@ -41,7 +41,7 @@ class Naive {
         int doNaiveAlgorithmn(string subText) const;
 
         
-        void writeHtmlFile();
+        void writeHtmlFile(double elapsedTime);
         
         /**
          * Führt Naiven-Algorithmus mehrmals aus,
