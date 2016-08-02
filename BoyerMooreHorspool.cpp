@@ -35,7 +35,7 @@ int BoyerMooreHorspool::boyerMooreHorspoolSearch(string subText) {
     //cout << pattern;
     //cout << subText;
 
-    while(subTextIndex < (subText.length() - patternLength) && patternIndex < pattern.length()){
+    while(subTextIndex < (subText.length() - patternLength) && patternIndex < pattern.length() && subText.length() >= pattern.length()){
         if(subText[subTextIndex + (patternLength - patternIndex)] == pattern[patternLength - patternIndex - 1]){
             //cout << "\nmatched\n";
             patternIndex++;
@@ -55,8 +55,8 @@ int BoyerMooreHorspool::boyerMooreHorspoolSearch(string subText) {
         }
     }
 
-    if(patternIndex >= pattern.length()){
-        return subTextIndex;
+    if(patternIndex == pattern.length()){
+        return subTextIndex + patternLength + 1;
     }
 
     return -1;
@@ -99,7 +99,7 @@ void BoyerMooreHorspool::run() {
 
     string subText = text;
 
-    while(result >= 0 && subText.length() >= pattern.length()) {
+    while(result >= 0) {
         //cout << "\nnew\n";
 
         startTime = chrono::steady_clock::now();
@@ -110,17 +110,17 @@ void BoyerMooreHorspool::run() {
 
         if(result >= 0) {
 
-            htmlOutput += subText.substr(0, result + 1);
+            htmlOutput += subText.substr(0, result - pattern.length());
             htmlOutput += "<em>" + pattern + "</em>";
 
             cout << "Pattern found at Index: ";
-            cout << alreadyCutOff+(result + 1);
+            cout << alreadyCutOff+(result - pattern.length());
             cout << " - ";
-            cout << alreadyCutOff+(result + 1 + pattern.length());
+            cout << alreadyCutOff+(result );
             cout << "\n";
 
-            alreadyCutOff += result + 1 + pattern.length();
-            subText = subText.substr(result + 1 + pattern.length());
+            alreadyCutOff += result;
+            subText = subText.substr(result);
             //cout << "while " << subText;
             counter++;
         } else {
