@@ -44,7 +44,7 @@ vector<int> Naive::run() {
     
     chrono::steady_clock::time_point startTime; 
     chrono::steady_clock::time_point endTime;
-    chrono::duration<double, std::nano> elapsedTime;
+    chrono::duration<double, std::milli> elapsedTime;
 
     // hold all resulting indices
     vector<int> indices = {};
@@ -76,13 +76,13 @@ vector<int> Naive::run() {
             cout << " - ";
             cout << alreadyCutOff+result;
             cout << "\n";
-            
+
             alreadyCutOff += result;
             subText = subText.substr(result);
             counter++;
             
        } else {
-           htmlOutput += subText;
+          htmlOutput += subText;
        }
     } 
     
@@ -91,5 +91,8 @@ vector<int> Naive::run() {
     cout << " times\n"; 
     
     writeHtmlFile(elapsedTime.count());
+
+    this->elapsedTime = elapsedTime.count();
+
     return indices;
 }

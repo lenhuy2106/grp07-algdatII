@@ -33,7 +33,9 @@ class Naive {
          * Variable für Anzahl gefundener Strings.
          */
         int counter;
-        
+
+        double elapsedTime;
+
         /**
          * Führt Naiven-Algorithmus aus.
          * @param subText Der noch zu durchsuchende Text.
@@ -46,7 +48,7 @@ class Naive {
 
         
     public:
-        
+
         /**
          * Konstruktor für einen Naiven-Algorithmus.
          * @param t Der zu durchsuchende Text als String.
@@ -62,6 +64,8 @@ class Naive {
          * und erzeugt ein HTML-File als Output
          */
         vector<int> run();
+
+        double getElapsedTime() { return elapsedTime; };
 };
 
 #endif //DYNAMICTEXTSEARCH_NAIVE_H

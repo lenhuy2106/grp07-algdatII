@@ -39,6 +39,8 @@ class KnuthMorrisPratt{
          */
         int counter;
 
+        double elapsedTime;
+
         /**
          * Methode generiert Prefixtable für den KMP-Algorithmus.
          */
@@ -69,6 +71,8 @@ class KnuthMorrisPratt{
          * und erzeugt ein HTML-File als Output
          */
         vector<int> run();
+
+        double getElapsedTime() { return elapsedTime; };
 };
 
 #endif //GRP07_ALGDATII_KNUTHMORRISPRATT_H

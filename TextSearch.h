@@ -37,6 +37,8 @@ public:
      */
     void readFile(const string inputFilePath);
 
+    string convertFileToString(const string inputFilePath);
+
     /**
      * Setter für Text.
      * @param text Der Text als String.

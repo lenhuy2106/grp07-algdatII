@@ -77,7 +77,7 @@ vector<int> KnuthMorrisPratt::run() {
 
     chrono::steady_clock::time_point startTime;
     chrono::steady_clock::time_point endTime;
-    chrono::duration<double, std::nano> elapsedTime;
+    chrono::duration<double, std::milli> elapsedTime;
 
     // hold all resulting indices
     vector<int> indices = {};
@@ -123,5 +123,8 @@ vector<int> KnuthMorrisPratt::run() {
     cout << " times\n";
 
     writeHtmlFile(elapsedTime.count());
+
+    this->elapsedTime = elapsedTime.count();
+
     return indices;
 }

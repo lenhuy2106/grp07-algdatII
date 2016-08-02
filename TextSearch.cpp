@@ -30,17 +30,35 @@ void TextSearch::readFile(const string inputFilePath) {
     }
 }
 
+string convertFileToString(const string inputFilePath) {
+    ifstream ifStream;
+    string s;
+    string result;
+    ifStream.open(inputFilePath);
+    if (ifStream.is_open()) {
+        cout << "reading ... " << endl;
+
+        while (!ifStream.eof()) {
+            getline(ifStream, s);
+            result.append("\n");
+            result.append(s);
+        }
+        ifStream.close();
+    }
+    return result;
+}
+
 int main() {
-    
+
     string input;
     int i;
     TextSearch textSearch;
-    
+
     cout << "Geben Sie die Textdatei an: " << endl;
     cin >> input;
 
     textSearch.readFile(input);
-    
+
     cout << "Nach welchem Pattern soll gesucht werden? " << endl;
     cin >> input;
     cout << input << endl;
@@ -50,7 +68,7 @@ int main() {
     cout << "1 : Knuth-Morris-Pratt-Algorithmus" << endl;
     cout << "2 : Boyer-Moore-Algorithmus" << endl;
     cin >> i;
-    
+
     switch (i) {
         case 0:
             Naive(textSearch.getText(), input);
@@ -64,4 +82,65 @@ int main() {
         default:
             break;
     }
+
+    /*
+    string input;
+    int i;
+    TextSearch textSearch;
+
+    cout << "Taste drücken zum starten: " << endl;
+    cin >> input;
+
+    int numberOfTests = 8;
+    vector<string> files(numberOfTests);
+    files={"test1.txt",
+           "test1.txt",
+           "test2.txt",
+           "test2.txt",
+           "test3.txt",
+           "test3.txt",
+           "test4.txt",
+           "test4.txt"};
+
+    vector<string> pattern(numberOfTests);
+    pattern={"ipsum",
+             "rutrum",
+             "AB",
+             "ABCDABD",
+             "BC",
+             "AB",
+             "von",
+             "Blindtexte"};
+
+    double *elapsedTimeNaive = new double[numberOfTests];
+    double *elapsedTimeKnuthMorrisPratt = new double[numberOfTests];
+    double *elapsedTimeBoyerMooreHorspool = new double[numberOfTests];
+
+    for (int i = 0; i < numberOfTests; i++) {
+
+        string text = convertFileToString(files[i]);
+
+        Naive *naive = new Naive(text, pattern[i]);
+        naive->run();
+        elapsedTimeNaive[i] = naive->getElapsedTime();
+
+
+        KnuthMorrisPratt *kmp = new KnuthMorrisPratt(text, pattern[i]);
+        kmp->run();
+        elapsedTimeKnuthMorrisPratt[i] = kmp->getElapsedTime();
+    }
+
+    ofstream myfile;
+    myfile.open("benchmarks.html");
+    for (int i = 0; i < numberOfTests; i++) {
+        myfile << files[i] + ":" + pattern[i] + ":";
+        myfile << elapsedTimeNaive[i];
+        myfile << ":";
+        myfile << elapsedTimeKnuthMorrisPratt[i];
+        myfile << ":";
+        myfile << elapsedTimeBoyerMooreHorspool[i];
+        myfile << "\n";
+    }
+    myfile.close();
+    */
 }
