@@ -46,7 +46,7 @@ class KnuthMorrisPratt{
         /**
          * Rekursive Suchmethode. Führt KMP-Algorithmus aus.
          * @param subText Der noch zu durchsuchende Text.
-         * @return Index bei dem Suchwort gefunden wurde.
+         * @return Index bei dem Suchwort gefunden wurde (Ende des Suchwortes).
          */
         int doKMPAlgorithmn(string subText);
 
