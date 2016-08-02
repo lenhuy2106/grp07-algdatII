@@ -12,7 +12,7 @@ using namespace std;
 class Naive {
 
 public:
-    int naiveSearch(string text, string pattern, int textLength, int patternLength) const;
+    int naiveSearch(string text, string pattern) const;
 };
 
 #endif //DYNAMICTEXTSEARCH_NAIVE_H
