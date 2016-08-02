@@ -22,7 +22,12 @@ ExternalProject_Get_Property(gtest source_dir binary_dir)
 
 ################
 # Define a test
-add_executable(textsearch_test tests.cpp)
+set(TEST_SOURCE_FILES
+        Naive.cpp Naive.h
+        KnuthMorrisPratt.cpp KnuthMorrisPratt.h
+        BoyerMooreHorspool.cpp BoyerMooreHorspool.h)
+
+add_executable(textsearch_test UnitTests.cpp ${TEST_SOURCE_FILES})
 
 ######################################
 # Configure the test to use GoogleTest

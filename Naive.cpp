@@ -40,30 +40,34 @@ void Naive::writeHtmlFile(double elapsedTime) {
     myfile.close();   
 }
 
-void Naive::run() {
+vector<int> Naive::run() {
     
     chrono::steady_clock::time_point startTime; 
     chrono::steady_clock::time_point endTime;
     chrono::duration<double, std::nano> elapsedTime;
-    
+
+    // hold all resulting indices
+    vector<int> indices = {};
+
     int result = 0;
     int alreadyCutOff = 0;
-        
+
     counter = 0;
     htmlOutput = "";
     
     string subText = string(text);
     
     while(result >= 0) {
-        
-       startTime = chrono::steady_clock::now();      
-       result = doNaiveAlgorithmn(subText);
-       endTime = chrono::steady_clock::now();
-       
-       elapsedTime += (endTime-startTime);
-       
-       if(result >= 0) {
-           
+
+        startTime = chrono::steady_clock::now();
+        result = doNaiveAlgorithmn(subText);
+        endTime = chrono::steady_clock::now();
+
+        elapsedTime += (endTime-startTime);
+
+        if(result >= 0) {
+
+            indices.push_back(alreadyCutOff+((result-pattern.length())));
             htmlOutput += subText.substr(0, result-pattern.length());
             htmlOutput += "<em>" + pattern + "</em>";
 
@@ -87,5 +91,5 @@ void Naive::run() {
     cout << " times\n"; 
     
     writeHtmlFile(elapsedTime.count());
-
+    return indices;
 }

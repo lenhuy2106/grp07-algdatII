@@ -2,6 +2,7 @@
 #define GRP07_ALGDATII_KNUTHMORRISPRATT_H
 
 #include <string>
+#include <vector>
 
 using namespace std;
 

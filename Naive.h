@@ -2,6 +2,7 @@
 #define DYNAMICTEXTSEARCH_NAIVE_H
 
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -42,14 +43,6 @@ class Naive {
 
         
         void writeHtmlFile(double elapsedTime);
-        
-        /**
-         * Führt Naiven-Algorithmus mehrmals aus,
-         * berchnet Anzahl gefundener Strings, 
-         * loggt Ergebnisse auf der Konsole
-         * und erzeugt ein HTML-File als Output
-         */
-        void run();
 
         
     public:
@@ -60,8 +53,15 @@ class Naive {
          * @param p Der zu suchende String.
          */
         Naive(string t, string p) : text(t), pattern(p){
-            run();
         }
+
+        /**
+         * Führt Naiven-Algorithmus mehrmals aus,
+         * berchnet Anzahl gefundener Strings,
+         * loggt Ergebnisse auf der Konsole
+         * und erzeugt ein HTML-File als Output
+         */
+        vector<int> run();
 };
 
 #endif //DYNAMICTEXTSEARCH_NAIVE_H

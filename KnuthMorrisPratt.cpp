@@ -79,6 +79,9 @@ void KnuthMorrisPratt::run() {
     chrono::steady_clock::time_point endTime;
     chrono::duration<double, std::nano> elapsedTime;
 
+    // hold all resulting indices
+    vector<int> indices = {};
+
     int result = 0;
     int alreadyCutOff = 0;
 
@@ -97,6 +100,7 @@ void KnuthMorrisPratt::run() {
 
         if (result >= 0) {
 
+            indices.push_back(alreadyCutOff+((result-pattern.length())));
             htmlOutput += subText.substr(0, result - pattern.length());
             htmlOutput += "<em>" + pattern + "</em>";
 
