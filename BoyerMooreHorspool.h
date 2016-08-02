@@ -1,7 +1,3 @@
-//
-// Created by lenovo on 8/1/2016.
-//
-
 #ifndef GRP07_ALGDATII_BOYERMOORE_H
 #define GRP07_ALGDATII_BOYERMOORE_H
 #include <string>
@@ -19,7 +15,7 @@ private:
     int counter;
     map<char,int> badMatchTable;
 
-    void writeHtmlFile();
+    void writeHtmlFile(double elapsedTime);
     void run();
 
     void generateBadMatchTable(string pattern);

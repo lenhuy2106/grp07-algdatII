@@ -1,11 +1,7 @@
-//
-// Created by lenovo on 8/1/2016.
-//
-
-
 #include <map>
 #include <iostream>
 #include <fstream>
+#include <chrono>
 #include "BoyerMooreHorspool.h"
 
 using namespace std;
@@ -66,7 +62,7 @@ int BoyerMooreHorspool::boyerMooreHorspoolSearch(string subText) {
     return -1;
 }
 
-void BoyerMooreHorspool::writeHtmlFile() {
+void BoyerMooreHorspool::writeHtmlFile(double elapsedTime) {
     ofstream myfile;
     myfile.open ("output.html");
     myfile << "<html><head><style>.p-colored em {background: #7FFF00;}</style></head><body><div class=\"p-colored\"><h1>Suche nach Pattern (\"";
@@ -74,6 +70,9 @@ void BoyerMooreHorspool::writeHtmlFile() {
     myfile << "\") ergab ";
     myfile << counter;
     myfile << " Treffer</h1>";
+    myfile << "<h1> Ben&ouml;tigte Zeit: ";
+    myfile << elapsedTime;
+    myfile << " (Millisekunden) </h1>";
     myfile << htmlOutput;
     myfile << "</div></body></html>";
     myfile.close();
@@ -89,6 +88,11 @@ void BoyerMooreHorspool::run() {
     htmlOutput = "";
 
     generateBadMatchTable(pattern);
+
+    chrono::steady_clock::time_point startTime;
+    chrono::steady_clock::time_point endTime;
+    chrono::duration<double, std::nano> elapsedTime;
+
     // show content:
     for (map<char,int>::iterator it=badMatchTable.begin(); it!=badMatchTable.end(); ++it)
        std::cout << it->first << " => " << it->second << '\n';
@@ -98,7 +102,11 @@ void BoyerMooreHorspool::run() {
     while(result >= 0 && subText.length() >= pattern.length()) {
         //cout << "\nnew\n";
 
+        startTime = chrono::steady_clock::now();
         result = boyerMooreHorspoolSearch(subText);
+        endTime = chrono::steady_clock::now();
+
+        elapsedTime += (endTime - startTime);
 
         if(result >= 0) {
 
@@ -124,6 +132,6 @@ void BoyerMooreHorspool::run() {
     cout << counter;
     cout << " times\n";
 
-    writeHtmlFile();
+    writeHtmlFile(elapsedTime);
 
 }

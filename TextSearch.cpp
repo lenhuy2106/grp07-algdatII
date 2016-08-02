@@ -1,5 +1,6 @@
 #include "TextSearch.h"
 #include "KnuthMorrisPratt.h"
+#include "BoyerMooreHorspool.h"
 #include "Naive.h"
 #include <fstream>
 #include <iostream>
@@ -58,7 +59,7 @@ int main() {
             KnuthMorrisPratt(textSearch.getText(), input);
             break;
         case 2:
-            cout << "TO DO CHINNNNAAAA";
+            BoyerMooreHorspool(textSearch.getText(), input);
             break;
         default:
             break;
