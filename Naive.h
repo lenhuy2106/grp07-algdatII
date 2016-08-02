@@ -1,18 +1,18 @@
-#ifndef GRP07_ALGDATII_KNUTHMORRISPRATT_H
-#define GRP07_ALGDATII_KNUTHMORRISPRATT_H
+#ifndef DYNAMICTEXTSEARCH_NAIVE_H
+#define DYNAMICTEXTSEARCH_NAIVE_H
 
 #include <string>
 
 using namespace std;
 
 /**
- * Klasse repräsentiert den Knuth-Morris-Pratt Suchalgorithmus für dynamische Texte.
+ * Klasse repräsentiert den Naiven Suchalgorithmus für dynamische Texte.
  * Genauere beschreibung siehe Textsearch.h.
  */
-class KnuthMorrisPratt{
-
+class Naive {
+   
     private:
-
+        
         /**
          * Der zu suchende String (Pattern).
          */
@@ -24,11 +24,6 @@ class KnuthMorrisPratt{
         string text;
 
         /**
-         * Zeiger auf den Prefixtable.
-         */
-        int* prefixTable;
-
-        /**
          * Variable für den generierten HTML-Output-String.
          */
         string htmlOutput;
@@ -37,39 +32,36 @@ class KnuthMorrisPratt{
          * Variable für Anzahl gefundener Strings.
          */
         int counter;
-
+        
         /**
-         * Methode generiert Prefixtable für den KMP-Algorithmus.
-         */
-        void generatePrefixTable();
-
-        /**
-         * Führt KMP-Algorithmus aus.
+         * Führt Naiven-Algorithmus aus.
          * @param subText Der noch zu durchsuchende Text.
          * @return Index bei dem Suchwort gefunden wurde (Ende des Suchwortes).
          */
-        int doKMPAlgorithmn(string subText);
+        int doNaiveAlgorithmn(string subText) const;
 
+        
         void writeHtmlFile();
-
+        
         /**
-         * Führt KMP-Algorithmus mehrmals aus,
+         * Führt Naiven-Algorithmus mehrmals aus,
          * berchnet Anzahl gefundener Strings, 
          * loggt Ergebnisse auf der Konsole
          * und erzeugt ein HTML-File als Output
          */
         void run();
 
+        
     public:
-
+        
         /**
-         * Konstruktor für einen KMP-Algorithmus.
+         * Konstruktor für einen Naiven-Algorithmus.
          * @param t Der zu durchsuchende Text als String.
          * @param p Der zu suchende String.
          */
-        KnuthMorrisPratt(string t, string p) : text(t), pattern(p){
+        Naive(string t, string p) : text(t), pattern(p){
             run();
         }
 };
 
-#endif //GRP07_ALGDATII_KNUTHMORRISPRATT_H
+#endif //DYNAMICTEXTSEARCH_NAIVE_H

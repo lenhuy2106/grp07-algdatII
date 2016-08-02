@@ -1,6 +1,6 @@
 #include "TextSearch.h"
 #include "KnuthMorrisPratt.h"
-#include "naive.h"
+#include "Naive.h"
 #include <fstream>
 #include <iostream>
 
@@ -30,70 +30,37 @@ void TextSearch::readFile(const string inputFilePath) {
 }
 
 int main() {
-    /*string input;
+    string input;
+    int i;
     TextSearch textSearch;
     
-    cout << "Hallo Dudeberger, gib mal Textdatei !" << endl;
+    cout << "Geben Sie die Textdatei an: " << endl;
     cin >> input;
-    cout << input << endl;
 
     textSearch.readFile(input);
     
-    cout << "Nach welchem Pattern soll gesucht werden?" << endl;
+    cout << "Nach welchem Pattern soll gesucht werden? " << endl;
     cin >> input;
     cout << input << endl;
     
-    KnuthMorrisPratt(textSearch.getText(), input);
-    */
+    cout << "Mit welchem Algorithmus soll die Textdatei dursucht werden?" << endl;
+    cout << "0 : Naiver-Algorithmus" << endl;
+    cout << "1 : Knuth-Morris-Pratt-Algorithmus" << endl;
+    cout << "2 : Boyer-Moore-Algorithmus" << endl;
+    cin >> i;
     
-    Naive naive;
-    
-    int result = 0;
-    int alreadyCutOff = 0;
-    int counter = 0;
-    string htmlOutput;
-    
-    string text = "acabzzazzab";
-    string pattern = "ab";
-    
-    string subText = string(text);
-    
-    while(result >= 0) {
-       result = naive.naiveSearch(subText, pattern);
-       if(result >= 0) {
-           
-            htmlOutput += subText.substr(0, result-pattern.length());
-            htmlOutput += "<em>" + pattern + "</em>";
-
-            cout << "Pattern found at Index: ";
-            cout << alreadyCutOff+((result-pattern.length()));
-            cout << " - ";
-            cout << alreadyCutOff+result;
-            cout << "\n";
-            
-            alreadyCutOff += result;
-            subText = subText.substr(result);
-            counter++;
-            
-       } else {
-           htmlOutput += subText;
-       }
-    } 
-    
-    cout << "\nPattern found ";
-    cout << counter;
-    cout << " times\n";  
-    
-    ofstream myfile;
-    myfile.open ("output.html");
-    myfile << "<html><head><style>.p-colored em {background: #7FFF00;}</style></head><body><div class=\"p-colored\"><h1>Suche nach Pattern (\"";
-    myfile << pattern;
-    myfile << "\") ergab ";
-    myfile << counter;
-    myfile << " Treffer</h1>";
-    myfile << htmlOutput;
-    myfile << "</div></body></html>";
-    myfile.close(); 
-    
-    return 0;
+    switch (i) {
+        case 0:
+            Naive(textSearch.getText(), input);
+            break;
+        case 1:
+            KnuthMorrisPratt(textSearch.getText(), input);
+            break;
+        case 2:
+            cout << "TO DO CHINNNNAAAA";
+            break;
+        default:
+            break;
+    }
+        
 }
