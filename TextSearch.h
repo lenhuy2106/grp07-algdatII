@@ -1,5 +1,4 @@
-/**
- * Algorithmen & Datenstrukturen II
+/* Algorithmen & Datenstrukturen II
  * Prof. Dr. Oliver Braun
  *
  * Blatt 2 - Teamprojekt
