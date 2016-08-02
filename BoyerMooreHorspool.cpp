@@ -6,11 +6,11 @@
 #include <map>
 #include <iostream>
 #include <fstream>
-#include "BoyerMoore.h"
+#include "BoyerMooreHorspool.h"
 
 using namespace std;
 
-void BoyerMoore::generateBadMatchTable(string pattern) {
+void BoyerMooreHorspool::generateBadMatchTable(string pattern) {
 
     int patternLength = pattern.length();
 
@@ -30,7 +30,7 @@ void BoyerMoore::generateBadMatchTable(string pattern) {
     this->badMatchTable = badMatchTable;
 }
 
-int BoyerMoore::boyerMooreSearch(string subText) {
+int BoyerMooreHorspool::boyerMooreHorspoolSearch(string subText) {
 
     int patternLength = pattern.length();
     int patternIndex = 0;
@@ -66,7 +66,7 @@ int BoyerMoore::boyerMooreSearch(string subText) {
     return -1;
 }
 
-void BoyerMoore::writeHtmlFile() {
+void BoyerMooreHorspool::writeHtmlFile() {
     ofstream myfile;
     myfile.open ("output.html");
     myfile << "<html><head><style>.p-colored em {background: #7FFF00;}</style></head><body><div class=\"p-colored\"><h1>Suche nach Pattern (\"";
@@ -79,7 +79,7 @@ void BoyerMoore::writeHtmlFile() {
     myfile.close();
 }
 
-void BoyerMoore::run() {
+void BoyerMooreHorspool::run() {
 
     //string pattern = "am";
     //string text = "Money ist am fly sein";
@@ -98,7 +98,7 @@ void BoyerMoore::run() {
     while(result >= 0 && subText.length() >= pattern.length()) {
         //cout << "\nnew\n";
 
-        result = boyerMooreSearch(subText);
+        result = boyerMooreHorspoolSearch(subText);
 
         if(result >= 0) {
 

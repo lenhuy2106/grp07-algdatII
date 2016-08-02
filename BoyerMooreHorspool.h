@@ -9,7 +9,7 @@
 
 using namespace std;
 
-class BoyerMoore {
+class BoyerMooreHorspool {
 
 private:
 
@@ -23,11 +23,11 @@ private:
     void run();
 
     void generateBadMatchTable(string pattern);
-    int boyerMooreSearch(string text);
+    int boyerMooreHorspoolSearch(string text);
 
 public:
 
-    BoyerMoore(string t, string p) : text(t), pattern(p){
+    BoyerMooreHorspool(string t, string p) : text(t), pattern(p){
         run();
     }
 
