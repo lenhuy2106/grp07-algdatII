@@ -2,6 +2,7 @@
 #define GRP07_ALGDATII_BOYERMOORE_H
 #include <string>
 #include <map>
+#include <vector>
 
 using namespace std;
 
@@ -16,16 +17,15 @@ private:
     map<char,int> badMatchTable;
 
     void writeHtmlFile(double elapsedTime);
-    void run();
 
     void generateBadMatchTable(string pattern);
     int boyerMooreHorspoolSearch(string text);
 
 public:
 
-    BoyerMooreHorspool(string t, string p) : text(t), pattern(p){
-        run();
-    }
+    BoyerMooreHorspool(string t, string p) : text(t), pattern(p) {};
+
+    vector<int> run();
 
 };
 

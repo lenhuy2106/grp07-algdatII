@@ -79,7 +79,7 @@ void BoyerMooreHorspool::writeHtmlFile(double elapsedTime) {
     myfile.close();
 }
 
-void BoyerMooreHorspool::run() {
+vector<int> BoyerMooreHorspool::run() {
 
     //string pattern = "am";
     //string text = "Money ist am fly sein";
@@ -90,9 +90,12 @@ void BoyerMooreHorspool::run() {
 
     generateBadMatchTable(pattern);
 
+    // hold all resulting indices
+    vector<int> indices = {};
+
     chrono::steady_clock::time_point startTime;
     chrono::steady_clock::time_point endTime;
-    chrono::duration<double, std::nano> elapsedTime;
+    chrono::duration<double, std::milli> elapsedTime;
 
     // show content:
     for (map<char,int>::iterator it=badMatchTable.begin(); it!=badMatchTable.end(); ++it)
@@ -111,6 +114,7 @@ void BoyerMooreHorspool::run() {
 
         if(result >= 0) {
 
+            indices.push_back(alreadyCutOff+((result-pattern.length())));
             htmlOutput += subText.substr(0, result - pattern.length());
             htmlOutput += "<em>" + pattern + "</em>";
 
@@ -135,4 +139,5 @@ void BoyerMooreHorspool::run() {
 
     writeHtmlFile(elapsedTime.count());
 
+    return indices;
 }

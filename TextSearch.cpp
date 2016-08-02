@@ -71,13 +71,13 @@ int main() {
 
     switch (i) {
         case 0:
-            Naive(textSearch.getText(), input);
+            Naive(textSearch.getText(), input).run();
             break;
         case 1:
-            KnuthMorrisPratt(textSearch.getText(), input);
+            KnuthMorrisPratt(textSearch.getText(), input).run();
             break;
         case 2:
-            BoyerMooreHorspool(textSearch.getText(), input);
+            BoyerMooreHorspool(textSearch.getText(), input).run();
             break;
         default:
             break;
