@@ -6,17 +6,11 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 set(SOURCE_FILES
     TextSearch.cpp TextSearch.h
-    naive.cpp naive.h
-    KnuthMorrisPratt.cpp KnuthMorrisPratt.h)
+    Naive.cpp Naive.h
+    KnuthMorrisPratt.cpp KnuthMorrisPratt.h
+    BoyerMoore.cpp BoyerMoore.h)
 
 add_executable(DynamicTextSearch ${SOURCE_FILES})
-
-#add_subdirectory( googletest )
-
-#find_package(GTest REQUIRED)
-#INCLUDE_DIRECTORIES(googletest/googletest/include)
-#TARGET_LINK_LIBRARIES(GoogleTest lib)
-
 
 include(ExternalProject)
 ExternalProject_Add(gtest
