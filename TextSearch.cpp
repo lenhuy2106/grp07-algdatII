@@ -5,11 +5,11 @@
 
 using namespace std;
 
-void TextSearch::readFile(const string inputFile) {
+void TextSearch::readFile(const string inputFilePath) {
     ifstream ifStream;
     string s;
     string result;
-    ifStream.open(inputFile);
+    ifStream.open(inputFilePath);
     if (ifStream.is_open()) {
         cout << "reading ... " << endl;
 
