@@ -15,9 +15,9 @@ void BoyerMooreHorspool::generateBadMatchTable(string pattern) {
     for(int i = 0; i < patternLength; i++){
         char currentChar = pattern[i];
         int badMatchValue =  patternLength - i - 1;
-        badMatchTable[currentChar] = badMatchValue;
-
-        if(badMatchValue == 0) {
+        if (i != patternLength - 1) {
+            badMatchTable[currentChar] = badMatchValue;
+        } else if (badMatchTable.find(currentChar) == badMatchTable.end()){
             badMatchTable[currentChar] = patternLength;
         }
     }
@@ -33,10 +33,11 @@ int BoyerMooreHorspool::boyerMooreHorspoolSearch(string subText) {
     int subTextIndex = 0;
     char currentChar = ' ';
     //cout << pattern;
-    //cout << subText;
+    //cout << "subLength = " << subText.substr(1).length();
 
-    while(subTextIndex < (subText.length() - patternLength) && patternIndex < pattern.length() && subText.length() >= pattern.length()){
-        if(subText[subTextIndex + (patternLength - patternIndex)] == pattern[patternLength - patternIndex - 1]){
+    while(subTextIndex <= (subText.length() - patternLength) && patternIndex < pattern.length() && subText.length() >= pattern.length()){
+        currentChar = subText[subTextIndex + patternLength - 1];
+        if(subText[subTextIndex + (patternLength - patternIndex - 1)] == pattern[patternLength - patternIndex - 1]){
             //cout << "\nmatched\n";
             patternIndex++;
         }else{
@@ -44,7 +45,7 @@ int BoyerMooreHorspool::boyerMooreHorspoolSearch(string subText) {
             string tmp = subText.substr(subTextIndex, patternLength);
             //cout << "\n TID :" << subTextIndex << " PID :" << patternLength;
             //cout << "\nskipped\n" << tmp << " & " << pattern[patternLength - patternIndex - 1];
-            currentChar = subText[subTextIndex + (patternLength - patternIndex)];
+
             if(badMatchTable.find(currentChar) != badMatchTable.end()){
                 subTextIndex += badMatchTable.at(currentChar);
                 //cout << " Char:" << currentChar << " Val: " << badMatchTable.at(currentChar);
@@ -56,7 +57,7 @@ int BoyerMooreHorspool::boyerMooreHorspoolSearch(string subText) {
     }
 
     if(patternIndex == pattern.length()){
-        return subTextIndex + patternLength + 1;
+        return subTextIndex + patternLength ;
     }
 
     return -1;
