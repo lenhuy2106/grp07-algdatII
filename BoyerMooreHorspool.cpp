@@ -42,7 +42,7 @@ int BoyerMooreHorspool::boyerMooreHorspoolSearch(string subText) {
             patternIndex++;
         }else{
             //[subTextIndex + (patternLength - patternIndex)]
-            string tmp = subText.substr(subTextIndex, patternLength);
+            //string tmp = subText.substr(subTextIndex, patternLength);
             //cout << "\n TID :" << subTextIndex << " PID :" << patternLength;
             //cout << "\nskipped\n" << tmp << " & " << pattern[patternLength - patternIndex - 1];
 
@@ -138,6 +138,8 @@ vector<int> BoyerMooreHorspool::run() {
     cout << " times\n";
 
     writeHtmlFile(elapsedTime.count());
+
+    this->elapsedTime = elapsedTime.count();
 
     return indices;
 }

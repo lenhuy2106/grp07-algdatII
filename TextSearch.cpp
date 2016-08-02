@@ -107,10 +107,10 @@ int main() {
              "rutrum",
              "AB",
              "ABCDABD",
-             "BC",
-             "AB",
+             "Passagiere",
+             "der",
              "von",
-             "Blindtexte"};
+             "Konsonantien"};
 
     double *elapsedTimeNaive = new double[numberOfTests];
     double *elapsedTimeKnuthMorrisPratt = new double[numberOfTests];
@@ -128,6 +128,10 @@ int main() {
         KnuthMorrisPratt *kmp = new KnuthMorrisPratt(text, pattern[i]);
         kmp->run();
         elapsedTimeKnuthMorrisPratt[i] = kmp->getElapsedTime();
+
+        BoyerMooreHorspool *bmh = new BoyerMooreHorspool(text, pattern[i]);
+        bmh->run();
+        elapsedTimeBoyerMooreHorspool[i] = bmh->getElapsedTime();
     }
 
     ofstream myfile;

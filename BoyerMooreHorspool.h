@@ -14,6 +14,8 @@ private:
     string text;
     string htmlOutput;
     int counter;
+
+    double elapsedTime;
     map<char,int> badMatchTable;
 
     void writeHtmlFile(double elapsedTime);
@@ -27,6 +29,7 @@ public:
 
     vector<int> run();
 
+    double getElapsedTime() { return elapsedTime; };
 };
 
 
