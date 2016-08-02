@@ -1,6 +1,3 @@
-//
-// Created by lenovo on 7/27/2016.
-//
 #include <iostream>
 #include <fstream>
 #include "KnuthMorrisPratt.h"

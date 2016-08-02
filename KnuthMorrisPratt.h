@@ -24,11 +24,10 @@ class KnuthMorrisPratt{
         void run();
 
     public:
-        
+
         KnuthMorrisPratt(string t, string p) : text(t), pattern(p){
             run();
         }
-                
 };
 
 #endif //GRP07_ALGDATII_KNUTHMORRISPRATT_H

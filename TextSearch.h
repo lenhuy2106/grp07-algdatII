@@ -1,3 +1,12 @@
+/**
+ * Algorithmen & Datenstrukturen II
+ * Prof. Dr. Oliver Braun
+ *
+ * Blatt 2 - Teamprojekt
+ * Thema: Suche in dynamischen Texten
+ *
+ * Team: Maximilian Keil, Long Mathias Yan, Andreas Buchmann, Huy Nu Le
+ */
 #ifndef TEXTSEARCH_TEXTSEARCH_H
 #define TEXTSEARCH_TEXTSEARCH_H
 
