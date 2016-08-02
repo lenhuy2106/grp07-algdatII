@@ -2,8 +2,8 @@
 language: cpp
 
 # Compiler selection
-compiler:
-  - g++
+compiler: g++
+
 # Build steps
 before_install:
   - chmod +x build.sh
