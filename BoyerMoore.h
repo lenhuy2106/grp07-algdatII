@@ -15,18 +15,15 @@ private:
 
     string pattern;
     string text;
-    int* prefixTable;
     string htmlOutput;
     int counter;
     map<char,int> badMatchTable;
 
-    void generatePrefixTable();
-    int doKMPAlgorithmn(string subText);
     void writeHtmlFile();
     void run();
 
     void generateBadMatchTable(string pattern);
-    int boyerMooreSearch(string text, string pattern, int *prefixTable);
+    int boyerMooreSearch(string text);
 
 public:
 
