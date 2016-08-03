@@ -35,7 +35,7 @@ class Naive {
         int counter;
 
         /**
-        * Variable für die Zeitmessung. Insgesamt benötigte Zeit.
+        * Variable für die Zeitmessung. Insgesamt benötigte Zeit. In Mikrosekunden.
         */
         double elapsedTime;
 
@@ -72,7 +72,7 @@ class Naive {
 
         /**
          * Gettter für die benötigte Zeit.
-         * @return Die benötigte Zeit als Gleitkommazahl.
+         * @return Die benötigte Zeit als Gleitkommazahl. In Mikrosekunden.
          */
         double getElapsedTime() { return elapsedTime; };
 };

@@ -63,7 +63,7 @@ int BoyerMooreHorspool::boyerMooreHorspoolSearch(string subText) {
     return -1;
 }
 
-void BoyerMooreHorspool::writeHtmlFile(double elapsedTime) {
+void BoyerMooreHorspool::writeHtmlFile() {
     ofstream myfile;
     myfile.open ("output.html");
     myfile << "<html><head><style>.p-colored em {background: #7FFF00;}</style></head><body><div class=\"p-colored\"><h1>Suche nach Pattern (\"";
@@ -95,7 +95,7 @@ vector<int> BoyerMooreHorspool::run() {
 
     chrono::steady_clock::time_point startTime;
     chrono::steady_clock::time_point endTime;
-    chrono::duration<double, std::milli> elapsedTime;
+    chrono::duration<double, std::micro> elapsedTime;
 
     // show content:
     for (map<char,int>::iterator it=badMatchTable.begin(); it!=badMatchTable.end(); ++it)
@@ -137,9 +137,8 @@ vector<int> BoyerMooreHorspool::run() {
     cout << counter;
     cout << " times\n";
 
-    writeHtmlFile(elapsedTime.count());
-
     this->elapsedTime = elapsedTime.count();
+    writeHtmlFile();
 
     return indices;
 }
