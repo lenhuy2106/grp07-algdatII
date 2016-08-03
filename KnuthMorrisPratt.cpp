@@ -77,7 +77,7 @@ vector<int> KnuthMorrisPratt::run() {
 
     chrono::steady_clock::time_point startTime;
     chrono::steady_clock::time_point endTime;
-    chrono::duration<double, std::milli> elapsedTime;
+    chrono::duration<double, std::micro> elapsedTime;
 
     // hold all resulting indices
     vector<int> indices = {};
