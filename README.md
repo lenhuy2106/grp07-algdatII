@@ -32,7 +32,7 @@ und vergleichen wir drei Algorithmen für die Textsuche in dynamischen (verände
 ### Umfang
 - [x] C++-Code in dem Gruppen-GitHub-Repository
 - [x] moderner C++-Code (C++11, C++14)
-- 
+
 `set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++11 -pthread")` 
 - [x] Unittests mit “vernünftiger” Code-Abdeckung
 - [x] Website für das Projekt inkl. Sourcecode-Dokumentation (Doxygen)
