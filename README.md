@@ -19,7 +19,7 @@ Implementierung und Vergleich von drei Algorithmen auf Laufzeit.
 * "Maximilian Keil" (Sweetboi) 
 * "Andi Buchmann" (Bookman)
 * "Nhu Huy Le" <nle@hm.edu> (Boss)
-* Long Mathias Yan (China)
+* "Long Mathias Yan" (China)
 
 ## <a name="intro"></a>Introduction
 Im Rahmen der Vorlesung _Algorithmen und Datenstrukturen 2_ im SS 16 an der Hochschule München entwickeln
