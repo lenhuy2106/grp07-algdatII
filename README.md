@@ -29,6 +29,19 @@ und vergleichen wir drei Algorithmen für die Textsuche in dynamischen (verände
 * Knuth-Morris-Pratt Algorithmus
 * Boyer-Moore-Horspool Algorithmus
 
+### Umfang
+- [x] C++-Code in dem Gruppen-GitHub-Repository
+- [x] moderner C++-Code (C++11, C++14)
+- 
+`set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++11 -pthread")` 
+- [x] Unittests mit “vernünftiger” Code-Abdeckung
+- [x] Website für das Projekt inkl. Sourcecode-Dokumentation (Doxygen)
+- [x] Anbindung an Travis CI
+
+`https://travis-ci.org/algdat/grp07-algdatII`
+- [x] Projekt übersetzen
+- [x] Unittests ausführen
+- [ ] evtl. Website für das Projekt bauen
 
 ## <a name="getting-started"></a>Getting started
 Jede Algorithmus-Klasse (*.cpp, *.h) nimmt im Konstruktor als Parameter einen Text und ein Pattern, nach dem gesucht
