@@ -15,6 +15,7 @@ Implementierung und Vergleich von drei Algorithmen auf Laufzeit.
 * [Team Members](#team-members)
 * [Introduction](#intro)
 * [Getting started](#getting-started)
+* [Resources](#resources)
 * [License](#license)
 
 ## <a name="team-members"></a>Team Members
@@ -60,6 +61,11 @@ mkdir build
 cd build
 cmake .. && make && make test 
 ```
+
+## <a name="resources"></a>Resources
+http://openbook.rheinwerk-verlag.de/c_von_a_bis_z/022_c_algorithmen_006.htm
+http://stackoverflow.com/questions/30548170/dfa-construction-in-knuth-morris-pratt-algorithm?rq=1
+http://stackoverflow.com/questions/4263200/does-kmp-algorithm-peforms-less-comparisons-than-the-simplified-boyer-moore-algo?rq=1
 
 ## <a name="license"></a>License
 ```
