@@ -11,7 +11,10 @@ Implementierung und Vergleich von einigen Algorithmen
 * [Getting started](#getting-started)
 
 ## <a name="team-members"></a>Team Members
-* "Nhu Huy Le" <nle@hm.edu>
+* "Maximilian Keil" (Sweetboi) 
+* "Andi Buchmann" (Bookman)
+* "Nhu Huy Le" <nle@hm.edu> (Boss)
+* Long Mathias Yan (China)
 
 ## <a name="intro"></a>Introduction
 Im Rahmen der Vorlesung _Algorithmen und Datenstrukturen 2_ im SS 16 entwickeln und vergleichen wir drei Algorithmen
