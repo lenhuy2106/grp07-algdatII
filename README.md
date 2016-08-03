@@ -11,6 +11,7 @@ Implementierung und Vergleich von drei Algorithmen auf Laufzeit.
 * [Team Members](#team-members)
 * [Introduction](#intro)
 * [Getting started](#getting-started)
+* [License](#license)
 
 ## <a name="team-members"></a>Team Members
 * "Maximilian Keil" (Sweetboi) 
@@ -37,16 +38,19 @@ Datei im Root mit gefundenen (markierten) Wörtern des Textes.
 
 Um das Projekt zu builden, kann im root per cmake der Prozess gestartet werden.
 
-<pre><code>mkdir build
+```
+mkdir build
 cd build
 cmake .. && make && make test 
-</code></pre>
+```
 
-<code><pre>
+## <a name="license"></a>License
+```
 Copyright 2016 @ Hochschule München
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
+
 http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
@@ -54,4 +58,4 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-</code></pre>
+```
