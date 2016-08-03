@@ -4,6 +4,7 @@
 #include <string>
 #include <map>
 #include <vector>
+#include <unordered_map>
 
 using namespace std;
 
@@ -19,6 +20,8 @@ private:
      * Der zu suchende String (Pattern).
      */
     string pattern;
+
+    int patternLength;
 
     /**
      * Der zu durchsuchende Text.
@@ -43,7 +46,7 @@ private:
     /**
      * Variable für Badmatchtable. Implementiert als Map.
      */
-    map<char,int> badMatchTable;
+    unordered_map<char,int> badMatchTable;
 
     /**
      * Methode generiert html File mit den im Text gefundenen Wörtern, der Anzahl der gefundenen Wörter,
@@ -71,7 +74,7 @@ public:
      * @param t Der zu durchsuchende Text als String.
      * @param p Der zu suchende String.
      */
-    BoyerMooreHorspool(string t, string p) : text(t), pattern(p) {};
+    BoyerMooreHorspool(string t, string p) : text(t), pattern(p), patternLength(p.length()) {};
 
     /**
      * Führt BM-Algorithmus mehrmals aus,
