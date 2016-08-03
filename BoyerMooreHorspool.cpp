@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <chrono>
+#include <unordered_map>
 #include "BoyerMooreHorspool.h"
 
 using namespace std;
@@ -10,16 +11,12 @@ void BoyerMooreHorspool::generateBadMatchTable(string pattern) {
 
     int patternLength = pattern.length();
 
-    map<char,int> badMatchTable = {};
+    unordered_map<char,int> badMatchTable = {};
 
-    for(int i = 0; i < patternLength; i++){
+    for(int i = 0; i < patternLength - 1; i++){
         char currentChar = pattern[i];
         int badMatchValue =  patternLength - i - 1;
-        if (i != patternLength - 1) {
-            badMatchTable[currentChar] = badMatchValue;
-        } else if (badMatchTable.find(currentChar) == badMatchTable.end()){
-            badMatchTable[currentChar] = patternLength;
-        }
+        badMatchTable[currentChar] = badMatchValue;
     }
 
     //badMatchTable['*'] = patternLength;
@@ -28,33 +25,27 @@ void BoyerMooreHorspool::generateBadMatchTable(string pattern) {
 
 int BoyerMooreHorspool::boyerMooreHorspoolSearch(string subText) {
 
-    int patternLength = pattern.length();
+    //int patternLength = pattern.length();
     int patternIndex = 0;
     int subTextIndex = 0;
-    char currentChar = ' ';
-    //cout << pattern;
-    //cout << "subLength = " << subText.substr(1).length();
+    char startingChar = ' ';
 
-    while(subTextIndex <= (subText.length() - patternLength) && patternIndex < pattern.length() && subText.length() >= pattern.length()){
-        currentChar = subText[subTextIndex + patternLength - 1];
-        if(subText[subTextIndex + (patternLength - patternIndex - 1)] == pattern[patternLength - patternIndex - 1]){
-            //cout << "\nmatched\n";
-            patternIndex++;
-        }else{
-            //[subTextIndex + (patternLength - patternIndex)]
-            //string tmp = subText.substr(subTextIndex, patternLength);
-            //cout << "\n TID :" << subTextIndex << " PID :" << patternLength;
-            //cout << "\nskipped\n" << tmp << " & " << pattern[patternLength - patternIndex - 1];
-
-            if(badMatchTable.find(currentChar) != badMatchTable.end()){
-                subTextIndex += badMatchTable.at(currentChar);
-                //cout << " Char:" << currentChar << " Val: " << badMatchTable.at(currentChar);
-            } else {
-                subTextIndex += patternLength;
+    if(subText.length() >= patternLength) {
+        while(subTextIndex <= (subText.length() - patternLength) && patternIndex < patternLength){
+            startingChar = subText[subTextIndex + patternLength - 1];
+            if(subText[subTextIndex + (patternLength - patternIndex - 1)] == pattern[patternLength - patternIndex - 1]){
+                patternIndex++;
+            }else{
+                if(badMatchTable.find(startingChar) != badMatchTable.end()){
+                    subTextIndex += badMatchTable.at(startingChar);
+                } else {
+                    subTextIndex += patternLength;
+                }
+                patternIndex = 0;
             }
-            patternIndex = 0;
         }
     }
+
 
     if(patternIndex == pattern.length()){
         return subTextIndex + patternLength ;
@@ -63,7 +54,7 @@ int BoyerMooreHorspool::boyerMooreHorspoolSearch(string subText) {
     return -1;
 }
 
-void BoyerMooreHorspool::writeHtmlFile(double elapsedTime) {
+void BoyerMooreHorspool::writeHtmlFile() {
     ofstream myfile;
     myfile.open ("output.html");
     myfile << "<html><head><style>.p-colored em {background: #7FFF00;}</style></head><body><div class=\"p-colored\"><h1>Suche nach Pattern (\"";
@@ -98,8 +89,8 @@ vector<int> BoyerMooreHorspool::run() {
     chrono::duration<double, std::micro> elapsedTime;
 
     // show content:
-    for (map<char,int>::iterator it=badMatchTable.begin(); it!=badMatchTable.end(); ++it)
-       std::cout << it->first << " => " << it->second << '\n';
+    //for (unordered_map<char,int>::iterator it=badMatchTable.begin(); it!=badMatchTable.end(); ++it)
+    //   std::cout << it->first << " => " << it->second << '\n';
 
     string subText = text;
 
@@ -137,9 +128,8 @@ vector<int> BoyerMooreHorspool::run() {
     cout << counter;
     cout << " times\n";
 
-    writeHtmlFile(elapsedTime.count());
-
     this->elapsedTime = elapsedTime.count();
+    writeHtmlFile();
 
     return indices;
 }

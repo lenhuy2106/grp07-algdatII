@@ -40,7 +40,7 @@ class KnuthMorrisPratt{
         int counter;
 
         /**
-         * Variable für die Gesamtzeit die benötigt wurde.
+         * Variable für die Gesamtzeit die benötigt wurde. In Mikrosekunden.
          */
         double elapsedTime;
 
@@ -81,7 +81,7 @@ class KnuthMorrisPratt{
 
         /**
          * Getter für die benötigte Gesamtzeit.
-         * @return Die Zeit als Gleitkommazahl.
+         * @return Die Zeit als Gleitkommazahl. In Mikrosekunden.
          */
         double getElapsedTime() { return elapsedTime; };
 };
