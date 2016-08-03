@@ -26,7 +26,18 @@ für die Textsuche in dynamischen (veränderlichen) Texten:
 
 
 ## <a name="getting-started"></a>Getting started
+Jede Algorithmus-Klasse (*.cpp, *.h) nimmt im Konstruktor als Parameter einen Text und ein Pattern, nach dem gesucht
+werden soll. Mit der öffentlichen run() Methode wird er ausgeführt und alle gefundenen Indices im Text als Vector<int>
+zurückgegeben.
 
+Ein Sample ist eingefügt (TextSearch.cpp). Er liest eine Textdatei über die Kommandozeile ein und erstellt eine HTML-
+Datei im Root mit gefundenen (markierten) Wörtern des Textes.
 
+Um das Projekt zu builden, kann im root per cmake der Prozess gestartet werden.
+
+<pre><code>mkdir build
+cd build
+cmake .. && make && make test 
+</code></pre>
 
 grp07-algdatII
