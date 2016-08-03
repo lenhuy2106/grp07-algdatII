@@ -2,7 +2,9 @@
 
 grp07-algdatII
 
-https://algdat.github.io/grp07-algdatII/
+Github-Pages: https://algdat.github.io/grp07-algdatII/
+
+Doxygen: https://cdn.rawgit.com/algdat/grp07-algdatII/master/html/index.html
 
 # Text-Suche in dynamischen Texten
 
@@ -13,13 +15,14 @@ Implementierung und Vergleich von drei Algorithmen auf Laufzeit.
 * [Team Members](#team-members)
 * [Introduction](#intro)
 * [Getting started](#getting-started)
+* [Resources](#resources)
 * [License](#license)
 
 ## <a name="team-members"></a>Team Members
 * "Maximilian Keil" (Sweetboi) 
 * "Andi Buchmann" (Bookman)
-* "Nhu Huy Le" <nle@hm.edu> (Boss)
-* Long Mathias Yan (China)
+* "Nhu Huy Le" (Boss)
+* "Long Mathias Yan" (China)
 
 ## <a name="intro"></a>Introduction
 Im Rahmen der Vorlesung _Algorithmen und Datenstrukturen 2_ im SS 16 an der Hochschule München entwickeln
@@ -58,6 +61,11 @@ mkdir build
 cd build
 cmake .. && make && make test 
 ```
+
+## <a name="resources"></a>Resources
+http://openbook.rheinwerk-verlag.de/c_von_a_bis_z/022_c_algorithmen_006.htm
+http://stackoverflow.com/questions/30548170/dfa-construction-in-knuth-morris-pratt-algorithm?rq=1
+http://stackoverflow.com/questions/4263200/does-kmp-algorithm-peforms-less-comparisons-than-the-simplified-boyer-moore-algo?rq=1
 
 ## <a name="license"></a>License
 ```
