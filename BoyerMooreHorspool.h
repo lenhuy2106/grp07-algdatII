@@ -89,6 +89,9 @@ public:
      * @return Die Zeit als Gleitkommazahl. In Mikrosekunden.
      */
     double getElapsedTime() { return elapsedTime; };
+
+    unordered_map<char,int> getBadMatchTable() { return badMatchTable; };
+
 };
 
 #endif //GRP07_ALGDATII_BOYERMOORE_H

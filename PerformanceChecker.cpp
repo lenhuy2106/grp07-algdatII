@@ -14,23 +14,27 @@ PerformanceChecker::PerformanceChecker() {
     vector<string> test2 = {"test2.txt", "AB", "ABCDABD"};
     vector<string> test3 = {"test3.txt", "Passagiere", "der"};
     vector<string> test4 = {"test4.txt", "von", "Konsonantien"};
+    vector<string> test5 = {"test5.txt", "Hooligans", "girls"};
+    vector<string> test6 = {"RandomBinary.txt", "01001100001", "001000"};
+
 
     this->filesAndSearchValues.push_back(test1);
     this->filesAndSearchValues.push_back(test2);
     this->filesAndSearchValues.push_back(test3);
     this->filesAndSearchValues.push_back(test4);
+    this->filesAndSearchValues.push_back(test5);
+    this->filesAndSearchValues.push_back(test6);
 
-    this->numberOfTestRuns = 3;
+    this->numberOfTestRuns = 5;
 }
 
 void PerformanceChecker::generateHTMLOutput() {
 
     ofstream myfile;
     myfile.open("performance_output.html");
-    myfile << "<html><head><link rel=\"stylesheet\" href=\"http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\"></head><body style='width: 500px; margin: 0 auto;'>";
+    myfile << "<html><head><link rel=\"stylesheet\" href=\"http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\"></head><body style='width: 700px; margin: 0 auto;'>";
     for(int i=0; i<this->dataObjects.size(); i++) {
-        myfile << "<h1>" + dataObjects[i].fileName + "</h1>";
-        myfile << "<h2>" + dataObjects[i].searchValue + "</h2>";
+        myfile << "</br><a href='" + dataObjects[i].fileName + "'><h1>" + dataObjects[i].fileName + "  ( &bdquo;" + dataObjects[i].searchValue + "&ldquo; )</h1></a>";
         myfile << "<table class='table'><tr><th></th>";
         for(int i=0; i<numberOfTestRuns; i++) {
             myfile << "<th>";
@@ -47,13 +51,13 @@ void PerformanceChecker::generateHTMLOutput() {
             counter += dataObjects[i].runTimesNaive[j];
             myfile << "<td>";
             myfile << dataObjects[i].runTimesNaive[j];
-            myfile << "</td>";
+            myfile << " &micro;s</td>";
         }
         myfile.flush();
 
         myfile << "<td>";
         myfile << (counter/numberOfTestRuns);
-        myfile << "</td></tr>";
+        myfile << " &micro;s</td></tr>";
 
         myfile << "<tr><td>KMP</td>";
 
@@ -63,13 +67,13 @@ void PerformanceChecker::generateHTMLOutput() {
             counter += dataObjects[i].runTimesKmp[j];
             myfile << "<td>";
             myfile << dataObjects[i].runTimesKmp[j];
-            myfile << "</td>";
+            myfile << " &micro;s</td>";
         }
         myfile.flush();
 
         myfile << "<td>";
         myfile << (counter/numberOfTestRuns);
-        myfile << "</td></tr>";
+        myfile << " &micro;s</td></tr>";
 
         myfile << "<tr><td>BMH</td>";
 
@@ -79,15 +83,58 @@ void PerformanceChecker::generateHTMLOutput() {
             counter += dataObjects[i].runTimesBmh[j];
             myfile << "<td>";
             myfile << dataObjects[i].runTimesBmh[j];
-            myfile << "</td>";
+            myfile << " &micro;s</td>";
         }
         myfile.flush();
 
         myfile << "<td>";
         myfile << (counter/numberOfTestRuns);
-        myfile << "</td></tr></table></br>";
+        myfile << " &micro;s</td></tr></table></br>";
 
+        myfile << "<div style='width: 100%; height: 100px;'>";
+
+        myfile << "<div style='width: 45%; float: left;'>PrefixTable:";
+        if(dataObjects[i].prefixTable.size() > 0) {
+            myfile << "<table class='table'><tr>";
+            for(int p=0; p<dataObjects[i].prefixTable.size(); p++) {
+                myfile << "<th>";
+                myfile << dataObjects[i].searchValue.at(p);
+                myfile << "</th>";
+            }
+            myfile << "</tr><tr>";
+            for(int p=0; p<dataObjects[i].prefixTable.size(); p++) {
+                myfile << "<td>";
+                myfile << dataObjects[i].prefixTable.at(p);
+                myfile << "</td>";
+            }
+            myfile << "</tr></table></div>";
+        }
         myfile.flush();
+
+
+        myfile << "<div style='width: 45%; float: right;'>Bad-Match-Table:</br>";
+        if(dataObjects[i].badMatchTable.size() > 0) {
+            myfile << "<table class='table'><tr>";
+            for(auto kv : dataObjects[i].badMatchTable) {
+                myfile << "<th>";
+                myfile << kv.first;
+                myfile << "</th>";
+            }
+            myfile << "<th>#</th>";
+            myfile << "</tr><tr>";
+            for(auto kv : dataObjects[i].badMatchTable) {
+                myfile << "<td>";
+                myfile << kv.second;
+                myfile << "</td>";
+            }
+            myfile << "<td>";
+            myfile << dataObjects[i].searchValue.length();
+            myfile << "</td>";
+
+            myfile << "</tr></table></br></div></div></br>";
+        }
+        myfile.flush();
+
     }
 
     myfile << "</body></html>";
@@ -165,7 +212,7 @@ void PerformanceChecker::executeAlgorithms() {
                 dataObject.runTimesKmp.push_back(kmp->getElapsedTime());
 
                 if(n==numberOfTestRuns-1) {
-                    //kmp->getPrefixTable && safe in Dataobject
+                    dataObject.prefixTable = kmp->getPrefixTable();
                 }
             }
 
@@ -177,7 +224,7 @@ void PerformanceChecker::executeAlgorithms() {
                 dataObject.runTimesBmh.push_back(bmh->getElapsedTime());
 
                 if(n==numberOfTestRuns-1) {
-                    //kmp->getPrefixTable && safe in Dataobject
+                    dataObject.badMatchTable = bmh->getBadMatchTable();
                 }
             }
 

@@ -2,7 +2,9 @@
 #define DYNAMICTEXTSEARCH_PERFORMANCECHECKER_H
 
 #include <string>
+#include <map>
 #include <vector>
+#include <unordered_map>
 
 using namespace std;
 
@@ -16,6 +18,8 @@ class PerformanceChecker {
             vector<double> runTimesNaive = {};
             vector<double> runTimesKmp = {};
             vector<double> runTimesBmh = {};
+            vector<int> prefixTable = {};
+            unordered_map<char,int> badMatchTable;
             DataObject(string f, string s) : fileName(f), searchValue(s) {};
         };
 

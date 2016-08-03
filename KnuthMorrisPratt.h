@@ -84,6 +84,14 @@ class KnuthMorrisPratt{
          * @return Die Zeit als Gleitkommazahl. In Mikrosekunden.
          */
         double getElapsedTime() { return elapsedTime; };
+
+        vector<int> getPrefixTable() {
+                vector<int> result;
+                for (int index = 0; index < pattern.length(); ++index) {
+                        result.push_back(prefixTable[index]);
+                }
+                return result;
+        }
 };
 
 #endif //GRP07_ALGDATII_KNUTHMORRISPRATT_H

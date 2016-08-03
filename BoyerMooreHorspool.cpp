@@ -11,7 +11,7 @@ void BoyerMooreHorspool::generateBadMatchTable(string pattern) {
 
     int patternLength = pattern.length();
 
-    unordered_map<char,int> badMatchTable = {};
+    unordered_map<char,int> badMatchTable;
 
     for(int i = 0; i < patternLength - 1; i++){
         char currentChar = pattern[i];
