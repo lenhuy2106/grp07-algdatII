@@ -2,7 +2,9 @@
 
 grp07-algdatII
 
-https://algdat.github.io/grp07-algdatII/
+Github-Pages: https://algdat.github.io/grp07-algdatII/
+
+Doxygen: https://cdn.rawgit.com/algdat/grp07-algdatII/master/html/index.html
 
 # Text-Suche in dynamischen Texten
 
