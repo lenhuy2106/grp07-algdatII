@@ -60,8 +60,7 @@ class Naive {
          * @param t Der zu durchsuchende Text als String.
          * @param p Der zu suchende String.
          */
-        Naive(string t, string p) : text(t), pattern(p){
-        }
+        Naive(string t, string p) : text(t), pattern(p){}
 
         /**
          * Führt Naiven-Algorithmus mehrmals aus,
@@ -73,7 +72,7 @@ class Naive {
 
         /**
          * Gettter für die benötigte Zeit.
-         * @return Die benötigte Zeit.
+         * @return Die benötigte Zeit als Gleitkommazahl.
          */
         double getElapsedTime() { return elapsedTime; };
 };

@@ -55,7 +55,7 @@ int KnuthMorrisPratt::doKMPAlgorithmn(string subText) {
     return -1;
 }
 
-void KnuthMorrisPratt::writeHtmlFile(double elapsedTime) {
+void KnuthMorrisPratt::writeHtmlFile() {
     ofstream myfile;
     myfile.open("output.html");
     myfile << "<html><head><style>.p-colored em {background: #7FFF00;}</style></head><body><div class=\"p-colored\"><h1>Suche nach Pattern (\"";
@@ -122,9 +122,8 @@ vector<int> KnuthMorrisPratt::run() {
     cout << counter;
     cout << " times\n";
 
-    writeHtmlFile(elapsedTime.count());
-
     this->elapsedTime = elapsedTime.count();
+    writeHtmlFile();
 
     return indices;
 }

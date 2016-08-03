@@ -39,6 +39,9 @@ class KnuthMorrisPratt{
          */
         int counter;
 
+        /**
+         * Variable für die Gesamtzeit die benötigt wurde.
+         */
         double elapsedTime;
 
         /**
@@ -53,7 +56,11 @@ class KnuthMorrisPratt{
          */
         int doKMPAlgorithmn(string subText);
 
-        void writeHtmlFile(double elapsedTime);
+        /**
+         * Methode generiert html File mit den im Text gefundenen Wörtern, der Anzahl der gefundenen Wörter,
+         * sowie der benötigten Gesamtzeit.
+         */
+        void writeHtmlFile();
 
     public:
 
@@ -62,8 +69,8 @@ class KnuthMorrisPratt{
          * @param t Der zu durchsuchende Text als String.
          * @param p Der zu suchende String.
          */
-        KnuthMorrisPratt(string t, string p) : text(t), pattern(p){
-        }
+        KnuthMorrisPratt(string t, string p) : text(t), pattern(p){}
+
         /**
          * Führt KMP-Algorithmus mehrmals aus,
          * berchnet Anzahl gefundener Strings,
@@ -72,6 +79,10 @@ class KnuthMorrisPratt{
          */
         vector<int> run();
 
+        /**
+         * Getter für die benötigte Gesamtzeit.
+         * @return Die Zeit als Gleitkommazahl.
+         */
         double getElapsedTime() { return elapsedTime; };
 };
 
