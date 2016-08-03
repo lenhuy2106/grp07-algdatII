@@ -18,7 +18,7 @@ Implementierung und Vergleich von drei Algorithmen auf Laufzeit.
 ## <a name="team-members"></a>Team Members
 * "Maximilian Keil" (Sweetboi) 
 * "Andi Buchmann" (Bookman)
-* "Nhu Huy Le" <nle@hm.edu> (Boss)
+* "Nhu Huy Le" (Boss)
 * "Long Mathias Yan" (China)
 
 ## <a name="intro"></a>Introduction
