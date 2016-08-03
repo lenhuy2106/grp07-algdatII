@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/algdat/grp07-algdatII.svg?branch=master)](https://travis-ci.org/algdat/grp07-algdatII)
 
+grp07-algdatII
+
 # Text-Suche in dynamischen Texten
 
 Implementierung und Vergleich von drei Algorithmen auf Laufzeit.
@@ -39,5 +41,3 @@ Um das Projekt zu builden, kann im root per cmake der Prozess gestartet werden.
 cd build
 cmake .. && make && make test 
 </code></pre>
-
-grp07-algdatII
