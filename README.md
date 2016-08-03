@@ -2,7 +2,7 @@
 
 # Text-Suche in dynamischen Texten
 
-Implementierung und Vergleich von einigen Algorithmen
+Implementierung und Vergleich von drei Algorithmen auf Effizienz.
 
 ## Table of Contents
 
