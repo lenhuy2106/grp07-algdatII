@@ -4,6 +4,8 @@
 #include "Naive.h"
 #include <fstream>
 #include <iostream>
+#include <unistd.h>
+#include <string>
 
 using namespace std;
 
@@ -50,6 +52,7 @@ string convertFileToString(const string inputFilePath) {
 
 int main() {
 
+
     string input;
     int i;
     TextSearch textSearch;
@@ -88,63 +91,76 @@ int main() {
     int i;
     TextSearch textSearch;
 
-    cout << "Taste drücken zum starten: " << endl;
-    cin >> input;
+    //cout << "Taste drücken zum starten: " << endl;
+    //cin >> input;
 
     int numberOfTests = 8;
     vector<string> files(numberOfTests);
-    files={"test1.txt",
-           "test1.txt",
-           "test2.txt",
-           "test2.txt",
-           "test3.txt",
-           "test3.txt",
-           "test4.txt",
-           "test4.txt"};
+    files = {"test1.txt",
+             "test1.txt",
+             "test2.txt",
+             "test2.txt",
+             "test3.txt",
+             "test3.txt",
+             "test4.txt",
+             "test4.txt"};
 
     vector<string> pattern(numberOfTests);
-    pattern={"ipsum",
-             "rutrum",
-             "AB",
-             "ABCDABD",
-             "Passagiere",
-             "der",
-             "von",
-             "Konsonantien"};
+    pattern = {"ipsum",
+               "rutrum",
+               "AB",
+               "ABCDABD",
+               "Passagiere",
+               "der",
+               "von",
+               "Konsonantien"};
 
     double *elapsedTimeNaive = new double[numberOfTests];
     double *elapsedTimeKnuthMorrisPratt = new double[numberOfTests];
     double *elapsedTimeBoyerMooreHorspool = new double[numberOfTests];
 
-    for (int i = 0; i < numberOfTests; i++) {
+    string benchmarkOutput = "";
 
-        string text = convertFileToString(files[i]);
+    for (int j = 0; j < 6; j++) {
+        for (int i = 0; i < numberOfTests; i++) {
 
-        Naive *naive = new Naive(text, pattern[i]);
-        naive->run();
-        elapsedTimeNaive[i] = naive->getElapsedTime();
+            string text = convertFileToString(files[i]);
 
+            Naive *naive = new Naive(text, pattern[i]);
+            naive->run();
+            elapsedTimeNaive[i] = naive->getElapsedTime();
 
-        KnuthMorrisPratt *kmp = new KnuthMorrisPratt(text, pattern[i]);
-        kmp->run();
-        elapsedTimeKnuthMorrisPratt[i] = kmp->getElapsedTime();
+            sleep(1);
 
-        BoyerMooreHorspool *bmh = new BoyerMooreHorspool(text, pattern[i]);
-        bmh->run();
-        elapsedTimeBoyerMooreHorspool[i] = bmh->getElapsedTime();
-    }
+            KnuthMorrisPratt *kmp = new KnuthMorrisPratt(text, pattern[i]);
+            kmp->run();
+            elapsedTimeKnuthMorrisPratt[i] = kmp->getElapsedTime();
 
-    ofstream myfile;
-    myfile.open("benchmarks.html");
-    for (int i = 0; i < numberOfTests; i++) {
-        myfile << files[i] + ":" + pattern[i] + ":";
-        myfile << elapsedTimeNaive[i];
-        myfile << ":";
-        myfile << elapsedTimeKnuthMorrisPratt[i];
-        myfile << ":";
-        myfile << elapsedTimeBoyerMooreHorspool[i];
-        myfile << "\n";
-    }
-    myfile.close();
-    */
+            sleep(1);
+
+            BoyerMooreHorspool *bmh = new BoyerMooreHorspool(text, pattern[i]);
+            bmh->run();
+            elapsedTimeBoyerMooreHorspool[i] = bmh->getElapsedTime();
+
+            sleep(1);
+        }
+
+        ofstream myfile;
+        string name = "benchmark" + j;
+
+        myfile.open(name);
+        for (int i = 0; i < numberOfTests; i++) {
+            myfile << files[i] + ":" + pattern[i] + ":";
+            myfile << elapsedTimeNaive[i];
+            myfile << ":";
+            myfile << elapsedTimeKnuthMorrisPratt[i];
+            myfile << ":";
+            myfile << elapsedTimeBoyerMooreHorspool[i];
+            myfile << "\n";
+        }
+        myfile.close();
+
+        sleep(1);
+    }*/
+
 }

@@ -95,7 +95,7 @@ vector<int> BoyerMooreHorspool::run() {
 
     chrono::steady_clock::time_point startTime;
     chrono::steady_clock::time_point endTime;
-    chrono::duration<double, std::milli> elapsedTime;
+    chrono::duration<double, std::micro> elapsedTime;
 
     // show content:
     for (map<char,int>::iterator it=badMatchTable.begin(); it!=badMatchTable.end(); ++it)
