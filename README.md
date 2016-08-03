@@ -19,8 +19,8 @@ Implementierung und Vergleich von drei Algorithmen auf Laufzeit.
 * Long Mathias Yan (China)
 
 ## <a name="intro"></a>Introduction
-Im Rahmen der Vorlesung _Algorithmen und Datenstrukturen 2_ im SS 16 entwickeln und vergleichen wir drei Algorithmen
-für die Textsuche in dynamischen (veränderlichen) Texten:
+Im Rahmen der Vorlesung _Algorithmen und Datenstrukturen 2_ im SS 16 an der Hochschule München entwickeln
+und vergleichen wir drei Algorithmen für die Textsuche in dynamischen (veränderlichen) Texten:
 
 * (Unterbrechender) Naiver Algorithmus
 * Knuth-Morris-Pratt Algorithmus
