@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/algdat/grp07-algdatII.svg?branch=master)](https://travis-ci.org/algdat/grp07-algdatII)
 
+![logo](https://our.umbraco.org/media/wiki/25126/635092270378752912_Full-Text-Search_128.PNG?bgcolor=fff&height=154&width=281&format=png)
+
 grp07-algdatII
 
 Github-Pages: https://algdat.github.io/grp07-algdatII/
