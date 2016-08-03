@@ -24,7 +24,7 @@ int Naive::doNaiveAlgorithmn(string subText) const {
         return -1;
 }
 
-void Naive::writeHtmlFile(double elapsedTime) {
+void Naive::writeHtmlFile() {
     ofstream myfile;
     myfile.open ("output.html");
     myfile << "<html><head><style>.p-colored em {background: #7FFF00;}</style></head><body><div class=\"p-colored\"><h1>Suche nach Pattern (\"";
@@ -88,11 +88,10 @@ vector<int> Naive::run() {
     
     cout << "\nPattern found ";
     cout << counter;
-    cout << " times\n"; 
-    
-    writeHtmlFile(elapsedTime.count());
+    cout << " times\n";
 
     this->elapsedTime = elapsedTime.count();
+    writeHtmlFile();
 
     return indices;
 }

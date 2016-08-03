@@ -34,6 +34,9 @@ class Naive {
          */
         int counter;
 
+        /**
+        * Variable für die Zeitmessung. Insgesamt benötigte Zeit.
+        */
         double elapsedTime;
 
         /**
@@ -43,8 +46,11 @@ class Naive {
          */
         int doNaiveAlgorithmn(string subText) const;
 
-        
-        void writeHtmlFile(double elapsedTime);
+        /**
+         * Methode generiert html File mit den im Text gefundenen Wörtern, der Anzahl der gefundenen Wörter,
+         * sowie der benötigten Gesamtzeit.
+         */
+        void writeHtmlFile();
 
         
     public:
@@ -54,8 +60,7 @@ class Naive {
          * @param t Der zu durchsuchende Text als String.
          * @param p Der zu suchende String.
          */
-        Naive(string t, string p) : text(t), pattern(p){
-        }
+        Naive(string t, string p) : text(t), pattern(p){}
 
         /**
          * Führt Naiven-Algorithmus mehrmals aus,
@@ -65,6 +70,10 @@ class Naive {
          */
         vector<int> run();
 
+        /**
+         * Gettter für die benötigte Zeit.
+         * @return Die benötigte Zeit als Gleitkommazahl.
+         */
         double getElapsedTime() { return elapsedTime; };
 };
 
