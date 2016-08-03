@@ -2,6 +2,7 @@
 #include "KnuthMorrisPratt.h"
 #include "BoyerMooreHorspool.h"
 #include "Naive.h"
+#include "PerformanceChecker.h"
 #include <fstream>
 #include <iostream>
 #include <unistd.h>
@@ -52,7 +53,17 @@ string convertFileToString(const string inputFilePath) {
 
 int main() {
 
+    PerformanceChecker *performanceChecker = new PerformanceChecker();
 
+    sleep(1);
+
+    performanceChecker->executeAlgorithms();
+
+    sleep(1);
+
+    performanceChecker->generateHTMLOutput();
+
+    /*
     string input;
     int i;
     TextSearch textSearch;
@@ -85,16 +96,15 @@ int main() {
         default:
             break;
     }
+    */
 
     /*
     string input;
     int i;
     TextSearch textSearch;
 
-    //cout << "Taste drücken zum starten: " << endl;
-    //cin >> input;
-
     int numberOfTests = 8;
+
     vector<string> files(numberOfTests);
     files = {"test1.txt",
              "test1.txt",

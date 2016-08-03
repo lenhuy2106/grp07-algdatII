@@ -8,7 +8,8 @@ set(SOURCE_FILES
     TextSearch.cpp TextSearch.h
     Naive.cpp Naive.h
     KnuthMorrisPratt.cpp KnuthMorrisPratt.h
-    BoyerMooreHorspool.cpp BoyerMooreHorspool.h)
+    BoyerMooreHorspool.cpp BoyerMooreHorspool.h
+    PerformanceChecker.cpp PerformanceChecker.h)
 
 add_executable(DynamicTextSearch ${SOURCE_FILES})
 
