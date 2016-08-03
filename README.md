@@ -2,6 +2,8 @@
 
 grp07-algdatII
 
+https://algdat.github.io/grp07-algdatII/
+
 # Text-Suche in dynamischen Texten
 
 Implementierung und Vergleich von drei Algorithmen auf Laufzeit.
