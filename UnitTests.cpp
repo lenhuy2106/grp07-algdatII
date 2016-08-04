@@ -12,7 +12,7 @@
 using namespace std;
 
 TEST(naiveAlgorithm, run) {
-    vector<int> firstIndices = Naive("lorem ipsum alta ipsum fef ipsu", "ipsum").run();
+    vector<int> firstIndices = Naive("lorem ipsum alta ipsum fef ipsu", "ipsum", false).run();
 
     ASSERT_FALSE(firstIndices.empty());
 
@@ -26,7 +26,7 @@ TEST(naiveAlgorithm, run) {
 }
 
 TEST(kmpAlgorithm, run) {
-    vector<int> firstIndices = KnuthMorrisPratt("lorem ipsum alta ipsum fef ipsu", "ipsum").run();
+    vector<int> firstIndices = KnuthMorrisPratt("lorem ipsum alta ipsum fef ipsu", "ipsum", false).run();
 
     ASSERT_FALSE(firstIndices.empty());
 
@@ -40,7 +40,7 @@ TEST(kmpAlgorithm, run) {
 }
 
 TEST(bmhAlgorithm, run) {
-    vector<int> firstIndices = BoyerMooreHorspool("lorem ipsum alta ipsum fef ipsu", "ipsum").run();
+    vector<int> firstIndices = BoyerMooreHorspool("lorem ipsum alta ipsum fef ipsu", "ipsum", false).run();
 
     ASSERT_FALSE(firstIndices.empty());
 
