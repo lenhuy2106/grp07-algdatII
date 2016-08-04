@@ -1,0 +1,1 @@
+cmd='/usr/bin/cmake.exe;-GUnix Makefiles;/cygdrive/c/Users/towlie1337/Uni/Algorithmen und Datenstrukturen II/grp07-algdatII/buildcmake/gtest/src/gtest'

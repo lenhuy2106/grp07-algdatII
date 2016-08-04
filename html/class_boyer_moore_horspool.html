@@ -96,17 +96,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6a688c39757cdf31dc1c1608c7345128"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_boyer_moore_horspool.html#a6a688c39757cdf31dc1c1608c7345128">BoyerMooreHorspool</a> (string t, string p)</td></tr>
-<tr class="separator:a6a688c39757cdf31dc1c1608c7345128"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa034da3e63e7f20b62eedd6f4fa22463"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_boyer_moore_horspool.html#aa034da3e63e7f20b62eedd6f4fa22463">BoyerMooreHorspool</a> (string t, string p, bool perfomanceTest)</td></tr>
+<tr class="separator:aa034da3e63e7f20b62eedd6f4fa22463"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37869786da4dbeeeb68bcaaff3e7580f"><td class="memItemLeft" align="right" valign="top">vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_boyer_moore_horspool.html#a37869786da4dbeeeb68bcaaff3e7580f">run</a> ()</td></tr>
 <tr class="separator:a37869786da4dbeeeb68bcaaff3e7580f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d3e89d63234aa057f8060071f4cb86a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_boyer_moore_horspool.html#a6d3e89d63234aa057f8060071f4cb86a">getElapsedTime</a> ()</td></tr>
 <tr class="separator:a6d3e89d63234aa057f8060071f4cb86a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5213f19a77e8094a421215d2e46066c"><td class="memItemLeft" align="right" valign="top">vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_boyer_moore_horspool.html#ad5213f19a77e8094a421215d2e46066c">getBadMatchTable</a> ()</td></tr>
+<tr class="separator:ad5213f19a77e8094a421215d2e46066c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Klasse repräsentiert den Boyer Moore Suchalgorithmus für dynamische Texte. Genauere beschreibung siehe <a class="el" href="_text_search_8h_source.html">Textsearch.h</a>. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a6a688c39757cdf31dc1c1608c7345128"></a>
+<a class="anchor" id="aa034da3e63e7f20b62eedd6f4fa22463"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -123,7 +125,13 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>p</em>&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>perfomanceTest</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -148,6 +156,30 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ad5213f19a77e8094a421215d2e46066c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;int&gt; BoyerMooreHorspool::getBadMatchTable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Getter für BadMatch Table. Wird für HTML Output benötigt. </p><dl class="section return"><dt>Returns</dt><dd>BadMatch Table als vector. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a6d3e89d63234aa057f8060071f4cb86a"></a>
 <div class="memitem">
 <div class="memproto">

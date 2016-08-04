@@ -1,0 +1,3 @@
+/cygdrive/c/Users/towlie1337/Uni/Algorithmen und Datenstrukturen II/grp07-algdatII/buildcmake/CMakeFiles/textsearch_test.dir
+/cygdrive/c/Users/towlie1337/Uni/Algorithmen und Datenstrukturen II/grp07-algdatII/buildcmake/CMakeFiles/gtest.dir
+/cygdrive/c/Users/towlie1337/Uni/Algorithmen und Datenstrukturen II/grp07-algdatII/buildcmake/CMakeFiles/DynamicTextSearch.dir

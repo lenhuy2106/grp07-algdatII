@@ -96,17 +96,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af81c9274fbb470b615a201def04d4d2e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_knuth_morris_pratt.html#af81c9274fbb470b615a201def04d4d2e">KnuthMorrisPratt</a> (string t, string p)</td></tr>
-<tr class="separator:af81c9274fbb470b615a201def04d4d2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a757fa9bc0633107be11836a09a7c6643"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_knuth_morris_pratt.html#a757fa9bc0633107be11836a09a7c6643">KnuthMorrisPratt</a> (string t, string p, bool perfomanceTest)</td></tr>
+<tr class="separator:a757fa9bc0633107be11836a09a7c6643"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaba005e4319427284319e883a82bc939"><td class="memItemLeft" align="right" valign="top">vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_knuth_morris_pratt.html#aaba005e4319427284319e883a82bc939">run</a> ()</td></tr>
 <tr class="separator:aaba005e4319427284319e883a82bc939"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6cb6da746737d78d44452b3ea709d531"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_knuth_morris_pratt.html#a6cb6da746737d78d44452b3ea709d531">getElapsedTime</a> ()</td></tr>
 <tr class="separator:a6cb6da746737d78d44452b3ea709d531"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6768e6b7895b2cbf59c77a4caf94439a"><td class="memItemLeft" align="right" valign="top">vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_knuth_morris_pratt.html#a6768e6b7895b2cbf59c77a4caf94439a">getPrefixTable</a> ()</td></tr>
+<tr class="separator:a6768e6b7895b2cbf59c77a4caf94439a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Klasse repräsentiert den Knuth-Morris-Pratt Suchalgorithmus für dynamische Texte. Genauere beschreibung siehe <a class="el" href="_text_search_8h_source.html">Textsearch.h</a>. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="af81c9274fbb470b615a201def04d4d2e"></a>
+<a class="anchor" id="a757fa9bc0633107be11836a09a7c6643"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -123,7 +125,13 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>p</em>&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>perfomanceTest</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -169,6 +177,30 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Getter für die benötigte Gesamtzeit. </p><dl class="section return"><dt>Returns</dt><dd>Die Zeit als Gleitkommazahl. In Mikrosekunden. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6768e6b7895b2cbf59c77a4caf94439a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;int&gt; KnuthMorrisPratt::getPrefixTable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Getter für Prefix Table. Wird für HTML Output benötigt. </p><dl class="section return"><dt>Returns</dt><dd>Prefix Table als vector. </dd></dl>
 
 </div>
 </div>

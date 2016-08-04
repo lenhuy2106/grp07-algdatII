@@ -82,8 +82,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a href="https://travis-ci.org/algdat/grp07-algdatII"></a></p>
+<div class="image">
+<img src="https://our.umbraco.org/media/wiki/25126/635092270378752912_Full-Text-Search_128.PNG?bgcolor=fff&height=154&width=281&format=png"  alt="logo"/>
+</div>
 <p>grp07-algdatII</p>
-<p><a href="https://algdat.github.io/grp07-algdatII/">https://algdat.github.io/grp07-algdatII/</a></p>
+<p>Github-Pages: <a href="https://algdat.github.io/grp07-algdatII/">https://algdat.github.io/grp07-algdatII/</a></p>
+<p>Doxygen: <a href="https://cdn.rawgit.com/algdat/grp07-algdatII/master/html/index.html">https://cdn.rawgit.com/algdat/grp07-algdatII/master/html/index.html</a></p>
 <h1>Text-Suche in dynamischen Texten</h1>
 <p>Implementierung und Vergleich von drei Algorithmen auf Laufzeit.</p>
 <h2>Table of Contents</h2>
@@ -91,14 +95,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li><a href="#team-members">Team Members</a></li>
 <li><a href="#intro">Introduction</a></li>
 <li><a href="#getting-started">Getting started</a></li>
+<li><a href="#start-application">Start Application</a></li>
+<li><a href="#resources">Resources</a></li>
 <li><a href="#license">License</a></li>
 </ul>
 <h2><a class="anchor" id="team-members"></a>Team Members</h2>
 <ul>
 <li>"Maximilian Keil" (Sweetboi)</li>
 <li>"Andi Buchmann" (Bookman)</li>
-<li>"Nhu Huy Le" <a href="#" onclick="location.href='mai'+'lto:'+'nle'+'@h'+'m.e'+'du'; return false;">nle@h<span style="display: none;">.nosp@m.</span>m.ed<span style="display: none;">.nosp@m.</span>u</a> (Boss)</li>
-<li>Long Mathias Yan (China)</li>
+<li>"Nhu Huy Le" (Boss)</li>
+<li>"Long Mathias Yan" (China)</li>
 </ul>
 <h2><a class="anchor" id="intro"></a>Introduction</h2>
 <p>Im Rahmen der Vorlesung <em>Algorithmen und Datenstrukturen 2</em> im SS 16 an der Hochschule München entwickeln und vergleichen wir drei Algorithmen für die Textsuche in dynamischen (veränderlichen) Texten:</p>
@@ -111,7 +117,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <ul>
 <li>[x] C++-Code in dem Gruppen-GitHub-Repository</li>
 <li>[x] moderner C++-Code (C++11, C++14)</li>
-<li><code>set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++11 -pthread")</code></li>
+</ul>
+<p><code>set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++11 -pthread")</code></p><ul>
 <li>[x] Unittests mit “vernünftiger” Code-Abdeckung</li>
 <li>[x] Website für das Projekt inkl. Sourcecode-Dokumentation (Doxygen)</li>
 <li>[x] Anbindung an Travis CI</li>
@@ -125,7 +132,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Jede Algorithmus-Klasse (*.cpp, *.h) nimmt im Konstruktor als Parameter einen Text und ein Pattern, nach dem gesucht werden soll. Mit der öffentlichen run() Methode wird er ausgeführt und alle gefundenen Indices im Text als Vector&lt;int&gt; zurückgegeben.</p>
 <p>Ein Sample ist eingefügt (TextSearch.cpp). Er liest eine Textdatei über die Kommandozeile ein und erstellt eine HTML- Datei im Root mit gefundenen (markierten) Wörtern des Textes.</p>
 <p>Um das Projekt zu builden, kann im root per cmake der Prozess gestartet werden.</p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;mkdir build</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;cd build</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;cmake .. &amp;&amp; make &amp;&amp; make test </div></div><!-- fragment --><h2><a class="anchor" id="license"></a>License</h2>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;mkdir build</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;cd build</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;cmake .. &amp;&amp; make &amp;&amp; make test </div></div><!-- fragment --><h2><a class="anchor" id="start-application"></a>Anwendung starten</h2>
+<p>Nach dem Start der Anwendung gibt es zwei Möglichkeiten. Es besteht die Möglichkeit eine angegebene Datei nach einem Pattern (Suchbegriff) zu durchsuchen, oder den Performance Vergleich zu starten. Beim wählen des Performance Vergleich sollten zuvor im Konstruktor der Klasse PerformanceChecker.cpp die gewünschten Files und Suchbegriffe, sowie die Anzahl der Messungen eingetragen werden. Nach dem ausführen wurden im aktuellen Ordner die entsprechenden HTML Output Files angelegt (***pattern***.html oder performance_output.html)</p>
+<div class="image">
+<img src="https://github.com/algdat/grp07-algdatII/blob/master/Search.JPG"  alt="alt text" title="Suche in Text HTML Output"/>
+</div>
+ <div class="image">
+<img src="https://github.com/algdat/grp07-algdatII/blob/master/PerformanceChecker.jpg"  alt="alt text" title="PerformanceChecker HTML Output"/>
+</div>
+<h2><a class="anchor" id="resources"></a>Resources</h2>
+<p><a href="http://openbook.rheinwerk-verlag.de/c_von_a_bis_z/022_c_algorithmen_006.htm">http://openbook.rheinwerk-verlag.de/c_von_a_bis_z/022_c_algorithmen_006.htm</a> <a href="http://algs4.cs.princeton.edu/lectures/53SubstringSearch.pdf">http://algs4.cs.princeton.edu/lectures/53SubstringSearch.pdf</a> <a href="http://stackoverflow.com/questions/30548170/dfa-construction-in-knuth-morris-pratt-algorithm?rq=1">http://stackoverflow.com/questions/30548170/dfa-construction-in-knuth-morris-pratt-algorithm?rq=1</a> <a href="http://stackoverflow.com/questions/4263200/does-kmp-algorithm-peforms-less-comparisons-than-the-simplified-boyer-moore-algo?rq=1">http://stackoverflow.com/questions/4263200/does-kmp-algorithm-peforms-less-comparisons-than-the-simplified-boyer-moore-algo?rq=1</a></p>
+<h2><a class="anchor" id="license"></a>License</h2>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;Copyright 2016 @ Hochschule München</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;you may not use this file except in compliance with the License.</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;You may obtain a copy of the License at</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;http://www.apache.org/licenses/LICENSE-2.0</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;Unless required by applicable law or agreed to in writing, software</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;See the License for the specific language governing permissions and</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;limitations under the License.</div></div><!-- fragment --> </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
