@@ -22,20 +22,6 @@ void BoyerMooreHorspool::generateBadMatchTable(string pattern) {
 
     this->badMatchTable = right;
 
-    /*
-    int patternLength = pattern.length();
-
-    unordered_map<char,int> badMatchTable;
-
-    for(int i = 0; i < patternLength - 1; i++){
-        char currentChar = pattern[i];
-        int badMatchValue =  patternLength - i - 1;
-        badMatchTable[currentChar] = badMatchValue;
-    }
-
-    //badMatchTable['*'] = patternLength;
-    this->badMatchTable = badMatchTable;
-    */
 }
 
 int BoyerMooreHorspool::boyerMooreHorspoolSearch(string subText) {
@@ -55,37 +41,6 @@ int BoyerMooreHorspool::boyerMooreHorspoolSearch(string subText) {
     }
     return -1;                       // not found
 
-    /*
-    //int patternLength = pattern.length();
-    int patternIndex = 0;
-    int subTextIndex = 0;
-    char startingChar = ' ';
-
-    char test =  subText[0];
-
-    if(subText.length() >= patternLength) {
-        while(subTextIndex <= (subText.length() - patternLength) && patternIndex < patternLength){
-            startingChar = subText[subTextIndex + patternLength - 1];
-            if(subText[subTextIndex + (patternLength - patternIndex - 1)] == pattern[patternLength - patternIndex - 1]){
-                patternIndex++;
-            }else{
-                if(badMatchTable.find(startingChar) != badMatchTable.end()){
-                    subTextIndex += badMatchTable.at(startingChar);
-                } else {
-                    subTextIndex += patternLength;
-                }
-                patternIndex = 0;
-            }
-        }
-    }
-
-
-    if(patternIndex == pattern.length()){
-        return subTextIndex + patternLength ;
-    }
-
-    return -1;
-     */
 }
 
 void BoyerMooreHorspool::writeHtmlFile() {
