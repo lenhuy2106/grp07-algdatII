@@ -1,0 +1,51 @@
+
+{
+	"sources" : 
+	[
+		
+		{
+			"file" : "/cygdrive/c/Users/towlie1337/Uni/Algorithmen und Datenstrukturen II/grp07-algdatII/buildcmake/CMakeFiles/gtest"
+		},
+		
+		{
+			"file" : "/cygdrive/c/Users/towlie1337/Uni/Algorithmen und Datenstrukturen II/grp07-algdatII/buildcmake/CMakeFiles/gtest.rule"
+		},
+		
+		{
+			"file" : "/cygdrive/c/Users/towlie1337/Uni/Algorithmen und Datenstrukturen II/grp07-algdatII/buildcmake/CMakeFiles/gtest-complete.rule"
+		},
+		
+		{
+			"file" : "/cygdrive/c/Users/towlie1337/Uni/Algorithmen und Datenstrukturen II/grp07-algdatII/buildcmake/gtest/src/gtest-stamp/gtest-install.rule"
+		},
+		
+		{
+			"file" : "/cygdrive/c/Users/towlie1337/Uni/Algorithmen und Datenstrukturen II/grp07-algdatII/buildcmake/gtest/src/gtest-stamp/gtest-mkdir.rule"
+		},
+		
+		{
+			"file" : "/cygdrive/c/Users/towlie1337/Uni/Algorithmen und Datenstrukturen II/grp07-algdatII/buildcmake/gtest/src/gtest-stamp/gtest-download.rule"
+		},
+		
+		{
+			"file" : "/cygdrive/c/Users/towlie1337/Uni/Algorithmen und Datenstrukturen II/grp07-algdatII/buildcmake/gtest/src/gtest-stamp/gtest-update.rule"
+		},
+		
+		{
+			"file" : "/cygdrive/c/Users/towlie1337/Uni/Algorithmen und Datenstrukturen II/grp07-algdatII/buildcmake/gtest/src/gtest-stamp/gtest-patch.rule"
+		},
+		
+		{
+			"file" : "/cygdrive/c/Users/towlie1337/Uni/Algorithmen und Datenstrukturen II/grp07-algdatII/buildcmake/gtest/src/gtest-stamp/gtest-configure.rule"
+		},
+		
+		{
+			"file" : "/cygdrive/c/Users/towlie1337/Uni/Algorithmen und Datenstrukturen II/grp07-algdatII/buildcmake/gtest/src/gtest-stamp/gtest-build.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : [ "gtest" ],
+		"name" : "gtest"
+	}
+}

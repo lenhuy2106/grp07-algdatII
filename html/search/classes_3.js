@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['textsearch',['TextSearch',['../class_text_search.html',1,'']]]
+  ['performancechecker',['PerformanceChecker',['../class_performance_checker.html',1,'']]]
 ];

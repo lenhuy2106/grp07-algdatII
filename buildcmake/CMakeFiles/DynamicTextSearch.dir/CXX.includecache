@@ -1,0 +1,86 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/towlie1337/Uni/Algorithmen und Datenstrukturen II/grp07-algdatII/BoyerMooreHorspool.cpp
+map
+-
+iostream
+-
+fstream
+-
+chrono
+-
+unordered_map
+-
+BoyerMooreHorspool.h
+/cygdrive/c/Users/towlie1337/Uni/Algorithmen und Datenstrukturen II/grp07-algdatII/BoyerMooreHorspool.h
+
+/cygdrive/c/Users/towlie1337/Uni/Algorithmen und Datenstrukturen II/grp07-algdatII/BoyerMooreHorspool.h
+string
+-
+map
+-
+vector
+-
+unordered_map
+-
+
+/cygdrive/c/Users/towlie1337/Uni/Algorithmen und Datenstrukturen II/grp07-algdatII/KnuthMorrisPratt.cpp
+iostream
+-
+fstream
+-
+chrono
+-
+KnuthMorrisPratt.h
+/cygdrive/c/Users/towlie1337/Uni/Algorithmen und Datenstrukturen II/grp07-algdatII/KnuthMorrisPratt.h
+
+/cygdrive/c/Users/towlie1337/Uni/Algorithmen und Datenstrukturen II/grp07-algdatII/KnuthMorrisPratt.h
+string
+-
+vector
+-
+
+/cygdrive/c/Users/towlie1337/Uni/Algorithmen und Datenstrukturen II/grp07-algdatII/Naive.cpp
+iostream
+-
+fstream
+-
+chrono
+-
+Naive.h
+/cygdrive/c/Users/towlie1337/Uni/Algorithmen und Datenstrukturen II/grp07-algdatII/Naive.h
+
+/cygdrive/c/Users/towlie1337/Uni/Algorithmen und Datenstrukturen II/grp07-algdatII/Naive.h
+string
+-
+vector
+-
+
+/cygdrive/c/Users/towlie1337/Uni/Algorithmen und Datenstrukturen II/grp07-algdatII/TextSearch.cpp
+TextSearch.h
+/cygdrive/c/Users/towlie1337/Uni/Algorithmen und Datenstrukturen II/grp07-algdatII/TextSearch.h
+KnuthMorrisPratt.h
+/cygdrive/c/Users/towlie1337/Uni/Algorithmen und Datenstrukturen II/grp07-algdatII/KnuthMorrisPratt.h
+BoyerMooreHorspool.h
+/cygdrive/c/Users/towlie1337/Uni/Algorithmen und Datenstrukturen II/grp07-algdatII/BoyerMooreHorspool.h
+Naive.h
+/cygdrive/c/Users/towlie1337/Uni/Algorithmen und Datenstrukturen II/grp07-algdatII/Naive.h
+fstream
+-
+iostream
+-
+unistd.h
+-
+string
+-
+
+/cygdrive/c/Users/towlie1337/Uni/Algorithmen und Datenstrukturen II/grp07-algdatII/TextSearch.h
+string
+-
+

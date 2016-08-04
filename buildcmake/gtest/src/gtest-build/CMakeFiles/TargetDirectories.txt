@@ -1,0 +1,2 @@
+/cygdrive/c/Users/towlie1337/Uni/Algorithmen und Datenstrukturen II/grp07-algdatII/buildcmake/gtest/src/gtest-build/CMakeFiles/gtest_main.dir
+/cygdrive/c/Users/towlie1337/Uni/Algorithmen und Datenstrukturen II/grp07-algdatII/buildcmake/gtest/src/gtest-build/CMakeFiles/gtest.dir
