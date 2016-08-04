@@ -19,7 +19,9 @@ class PerformanceChecker {
             vector<double> runTimesKmp = {};
             vector<double> runTimesBmh = {};
             vector<int> prefixTable = {};
-            unordered_map<char,int> badMatchTable;
+            vector<int> badMatchTable;
+            string fastest;
+            double averageTime;
             DataObject(string f, string s) : fileName(f), searchValue(s) {};
         };
 

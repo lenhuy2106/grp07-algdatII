@@ -53,124 +53,52 @@ string convertFileToString(const string inputFilePath) {
 
 int main() {
 
-    PerformanceChecker *performanceChecker = new PerformanceChecker();
-
-    sleep(1);
-
-    performanceChecker->executeAlgorithms();
-
-    sleep(1);
-
-    performanceChecker->generateHTMLOutput();
-
-    /*
     string input;
-    int i;
+    int i, j;
     TextSearch textSearch;
 
-    cout << "Geben Sie die Textdatei an: " << endl;
-    cin >> input;
+    cout << "Textdatei durchsuchen oder Performance-Vergleich? " << endl;
+    cout << "0 : Textdatei durchsuchen" << endl;
+    cout << "1 : Performance-Vergleich" << endl;
+    cin >> j;
 
-    textSearch.readFile(input);
+    if(j==0) {
+        cout << "Geben Sie die Textdatei an: " << endl;
+        cin >> input;
 
-    cout << "Nach welchem Pattern soll gesucht werden? " << endl;
-    cin >> input;
-    cout << input << endl;
+        textSearch.readFile(input);
 
-    cout << "Mit welchem Algorithmus soll die Textdatei dursucht werden?" << endl;
-    cout << "0 : Naiver-Algorithmus" << endl;
-    cout << "1 : Knuth-Morris-Pratt-Algorithmus" << endl;
-    cout << "2 : Boyer-Moore-Algorithmus" << endl;
-    cin >> i;
+        cout << "Nach welchem Pattern soll gesucht werden? " << endl;
+        cin >> input;
+        cout << input << endl;
 
-    switch (i) {
-        case 0:
-            Naive(textSearch.getText(), input).run();
-            break;
-        case 1:
-            KnuthMorrisPratt(textSearch.getText(), input).run();
-            break;
-        case 2:
-            BoyerMooreHorspool(textSearch.getText(), input).run();
-            break;
-        default:
-            break;
+        cout << "Mit welchem Algorithmus soll die Textdatei dursucht werden?" << endl;
+        cout << "0 : Naiver-Algorithmus" << endl;
+        cout << "1 : Knuth-Morris-Pratt-Algorithmus" << endl;
+        cout << "2 : Boyer-Moore-Algorithmus" << endl;
+        cin >> i;
+
+        switch (i) {
+            case 0:
+                Naive(textSearch.getText(), input, false).run();
+                break;
+            case 1:
+                KnuthMorrisPratt(textSearch.getText(), input, false).run();
+                break;
+            case 2:
+                BoyerMooreHorspool(textSearch.getText(), input, false).run();
+                break;
+            default:
+                break;
+        }
     }
-    */
 
-    /*
-    string input;
-    int i;
-    TextSearch textSearch;
-
-    int numberOfTests = 8;
-
-    vector<string> files(numberOfTests);
-    files = {"test1.txt",
-             "test1.txt",
-             "test2.txt",
-             "test2.txt",
-             "test3.txt",
-             "test3.txt",
-             "test4.txt",
-             "test4.txt"};
-
-    vector<string> pattern(numberOfTests);
-    pattern = {"ipsum",
-               "rutrum",
-               "AB",
-               "ABCDABD",
-               "Passagiere",
-               "der",
-               "von",
-               "Konsonantien"};
-
-    double *elapsedTimeNaive = new double[numberOfTests];
-    double *elapsedTimeKnuthMorrisPratt = new double[numberOfTests];
-    double *elapsedTimeBoyerMooreHorspool = new double[numberOfTests];
-
-    string benchmarkOutput = "";
-
-    for (int j = 0; j < 6; j++) {
-        for (int i = 0; i < numberOfTests; i++) {
-
-            string text = convertFileToString(files[i]);
-
-            Naive *naive = new Naive(text, pattern[i]);
-            naive->run();
-            elapsedTimeNaive[i] = naive->getElapsedTime();
-
-            sleep(1);
-
-            KnuthMorrisPratt *kmp = new KnuthMorrisPratt(text, pattern[i]);
-            kmp->run();
-            elapsedTimeKnuthMorrisPratt[i] = kmp->getElapsedTime();
-
-            sleep(1);
-
-            BoyerMooreHorspool *bmh = new BoyerMooreHorspool(text, pattern[i]);
-            bmh->run();
-            elapsedTimeBoyerMooreHorspool[i] = bmh->getElapsedTime();
-
-            sleep(1);
-        }
-
-        ofstream myfile;
-        string name = "benchmark" + j;
-
-        myfile.open(name);
-        for (int i = 0; i < numberOfTests; i++) {
-            myfile << files[i] + ":" + pattern[i] + ":";
-            myfile << elapsedTimeNaive[i];
-            myfile << ":";
-            myfile << elapsedTimeKnuthMorrisPratt[i];
-            myfile << ":";
-            myfile << elapsedTimeBoyerMooreHorspool[i];
-            myfile << "\n";
-        }
-        myfile.close();
-
+    if(j==1) {
+        PerformanceChecker *performanceChecker = new PerformanceChecker();
         sleep(1);
-    }*/
+        performanceChecker->executeAlgorithms();
+        sleep(1);
+        performanceChecker->generateHTMLOutput();
+    }
 
 }

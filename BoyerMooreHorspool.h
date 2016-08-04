@@ -46,7 +46,12 @@ private:
     /**
      * Variable für Badmatchtable. Implementiert als Map.
      */
-    unordered_map<char,int> badMatchTable;
+    vector<int> badMatchTable;
+
+    /**
+     * Variable um HTML Output in Performance Messung auszublenden.
+     */
+    bool perfomanceTest;
 
     /**
      * Methode generiert html File mit den im Text gefundenen Wörtern, der Anzahl der gefundenen Wörter,
@@ -74,7 +79,7 @@ public:
      * @param t Der zu durchsuchende Text als String.
      * @param p Der zu suchende String.
      */
-    BoyerMooreHorspool(string t, string p) : text(t), pattern(p), patternLength(p.length()) {};
+    BoyerMooreHorspool(string t, string p, bool perfomanceTest) : text(t), pattern(p), patternLength(p.length()), perfomanceTest(perfomanceTest) {};
 
     /**
      * Führt BM-Algorithmus mehrmals aus,
@@ -90,7 +95,11 @@ public:
      */
     double getElapsedTime() { return elapsedTime; };
 
-    unordered_map<char,int> getBadMatchTable() { return badMatchTable; };
+    /**
+     * Getter für BadMatch Table. Wird für HTML Output benötigt.
+     * @return BadMatch Table als vector.
+     */
+    vector<int> getBadMatchTable() { return badMatchTable; };
 
 };
 

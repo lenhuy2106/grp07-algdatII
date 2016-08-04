@@ -4,11 +4,25 @@
 #include <chrono>
 #include <unordered_map>
 #include "BoyerMooreHorspool.h"
+#include <math.h>
 
 using namespace std;
 
 void BoyerMooreHorspool::generateBadMatchTable(string pattern) {
 
+    int R = 256;
+
+    // position of rightmost occurrence of c in the pattern
+    vector<int> right = vector<int>(R);
+    for (int c = 0; c < R; c++)
+        right[c] = -1;
+
+    for (int j = 0; j < pattern.length(); j++)
+        right[pattern.at(j)] = j;
+
+    this->badMatchTable = right;
+
+    /*
     int patternLength = pattern.length();
 
     unordered_map<char,int> badMatchTable;
@@ -21,14 +35,33 @@ void BoyerMooreHorspool::generateBadMatchTable(string pattern) {
 
     //badMatchTable['*'] = patternLength;
     this->badMatchTable = badMatchTable;
+    */
 }
 
 int BoyerMooreHorspool::boyerMooreHorspoolSearch(string subText) {
 
+    int m = pattern.length();
+    int n = subText.length();
+    int skip;
+    for (int i = 0; i <= n - m; i += skip) {
+        skip = 0;
+        for (int j = m-1; j >= 0; j--) {
+            if (pattern.at(j) != subText.at(i+j)) {
+                skip = fmax(1, j - badMatchTable[subText.at(i+j)]);
+                break;
+            }
+        }
+        if (skip == 0) return i+patternLength;    // found
+    }
+    return -1;                       // not found
+
+    /*
     //int patternLength = pattern.length();
     int patternIndex = 0;
     int subTextIndex = 0;
     char startingChar = ' ';
+
+    char test =  subText[0];
 
     if(subText.length() >= patternLength) {
         while(subTextIndex <= (subText.length() - patternLength) && patternIndex < patternLength){
@@ -52,19 +85,22 @@ int BoyerMooreHorspool::boyerMooreHorspoolSearch(string subText) {
     }
 
     return -1;
+     */
 }
 
 void BoyerMooreHorspool::writeHtmlFile() {
     ofstream myfile;
-    myfile.open ("output.html");
+    myfile.open (pattern + ".html");
     myfile << "<html><head><style>.p-colored em {background: #7FFF00;}</style></head><body><div class=\"p-colored\"><h1>Suche nach Pattern (\"";
     myfile << pattern;
     myfile << "\") ergab ";
     myfile << counter;
     myfile << " Treffer</h1>";
-    myfile << "<h1> Ben&ouml;tigte Zeit: ";
-    myfile << elapsedTime;
-    myfile << " (Millisekunden) </h1>";
+    if(!perfomanceTest) {
+        myfile << "<h1> Ben&ouml;tigte Zeit: ";
+        myfile << elapsedTime;
+        myfile << " (Microsekunden) </h1>";
+    }
     myfile << htmlOutput;
     myfile << "</div></body></html>";
     myfile.close();

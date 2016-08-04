@@ -40,6 +40,11 @@ class Naive {
         double elapsedTime;
 
         /**
+         * Variable um HTML Output in Performance Messung auszublenden.
+         */
+        bool perfomanceTest;
+
+        /**
          * Führt Naiven-Algorithmus aus.
          * @param subText Der noch zu durchsuchende Text.
          * @return Index bei dem Suchwort gefunden wurde (Ende des Suchwortes).
@@ -60,7 +65,7 @@ class Naive {
          * @param t Der zu durchsuchende Text als String.
          * @param p Der zu suchende String.
          */
-        Naive(string t, string p) : text(t), pattern(p){}
+        Naive(string t, string p, bool perfomanceTest) : text(t), pattern(p), perfomanceTest(perfomanceTest) {}
 
         /**
          * Führt Naiven-Algorithmus mehrmals aus,

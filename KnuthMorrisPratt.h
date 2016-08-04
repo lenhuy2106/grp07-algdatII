@@ -45,6 +45,11 @@ class KnuthMorrisPratt{
         double elapsedTime;
 
         /**
+        * Variable um HTML Output in Performance Messung auszublenden.
+        */
+        bool perfomanceTest;
+
+        /**
          * Methode generiert Prefixtable für den KMP-Algorithmus.
          */
         void generatePrefixTable();
@@ -69,7 +74,7 @@ class KnuthMorrisPratt{
          * @param t Der zu durchsuchende Text als String.
          * @param p Der zu suchende String.
          */
-        KnuthMorrisPratt(string t, string p) : text(t), pattern(p){}
+        KnuthMorrisPratt(string t, string p, bool perfomanceTest) : text(t), pattern(p), perfomanceTest(perfomanceTest){}
 
         /**
          * Führt KMP-Algorithmus mehrmals aus,
@@ -85,6 +90,10 @@ class KnuthMorrisPratt{
          */
         double getElapsedTime() { return elapsedTime; };
 
+        /**
+         * Getter für Prefix Table. Wird für HTML Output benötigt.
+         * @return Prefix Table als vector.
+         */
         vector<int> getPrefixTable() {
                 vector<int> result;
                 for (int index = 0; index < pattern.length(); ++index) {

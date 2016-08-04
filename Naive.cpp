@@ -26,15 +26,17 @@ int Naive::doNaiveAlgorithmn(string subText) const {
 
 void Naive::writeHtmlFile() {
     ofstream myfile;
-    myfile.open ("output.html");
+    myfile.open (pattern + ".html");
     myfile << "<html><head><style>.p-colored em {background: #7FFF00;}</style></head><body><div class=\"p-colored\"><h1>Suche nach Pattern (\"";
     myfile << pattern;
     myfile << "\") ergab ";
     myfile << counter;
     myfile << " Treffer</h1>";
-    myfile << "<h1> Ben&ouml;tigte Zeit: ";
-    myfile << elapsedTime;
-    myfile << " (Millisekunden) </h1>";
+    if(!perfomanceTest) {
+        myfile << "<h1> Ben&ouml;tigte Zeit: ";
+        myfile << elapsedTime;
+        myfile << " (Microsekunden) </h1>";
+    }
     myfile << htmlOutput;
     myfile << "</div></body></html>";
     myfile.close();   
