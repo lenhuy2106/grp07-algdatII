@@ -30,7 +30,18 @@
         <section id="main-content">
           <p><a href="https://travis-ci.org/algdat/grp07-algdatII"><img src="https://travis-ci.org/algdat/grp07-algdatII.svg?branch=master" alt="Build Status"></a></p>
 
+<p><img src="https://our.umbraco.org/media/wiki/25126/635092270378752912_Full-Text-Search_128.PNG?bgcolor=fff&amp;height=154&amp;width=281&amp;format=png" alt="logo"></p>
+
 <p>grp07-algdatII</p>
+
+<p>Github-Pages: <a href="https://algdat.github.io/grp07-algdatII/">https://algdat.github.io/grp07-algdatII/</a></p>
+
+<p>Doxygen: <a href="https://cdn.rawgit.com/algdat/grp07-algdatII/master/html/index.html">https://cdn.rawgit.com/algdat/grp07-algdatII/master/html/index.html</a></p>
+
+<h1>
+<a id="text-suche-in-dynamischen-texten" class="anchor" href="#text-suche-in-dynamischen-texten" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Text-Suche in dynamischen Texten</h1>
+
+<p>Implementierung und Vergleich von drei Algorithmen auf Laufzeit.</p>
 
 <h2>
 <a id="table-of-contents" class="anchor" href="#table-of-contents" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Table of Contents</h2>
@@ -39,6 +50,8 @@
 <li><a href="#team-members">Team Members</a></li>
 <li><a href="#intro">Introduction</a></li>
 <li><a href="#getting-started">Getting started</a></li>
+<li><a href="#start-application">Start Application</a></li>
+<li><a href="#resources">Resources</a></li>
 <li><a href="#license">License</a></li>
 </ul>
 
@@ -48,8 +61,8 @@
 <ul>
 <li>"Maximilian Keil" (Sweetboi) </li>
 <li>"Andi Buchmann" (Bookman)</li>
-<li>"Nhu Huy Le" <a href="mailto:nle@hm.edu">nle@hm.edu</a> (Boss)</li>
-<li>Long Mathias Yan (China)</li>
+<li>"Nhu Huy Le" (Boss)</li>
+<li>"Long Mathias Yan" (China)</li>
 </ul>
 
 <h2>
@@ -62,6 +75,30 @@ und vergleichen wir drei Algorithmen für die Textsuche in dynamischen (verände
 <li>(Unterbrechender) Naiver Algorithmus</li>
 <li>Knuth-Morris-Pratt Algorithmus</li>
 <li>Boyer-Moore-Horspool Algorithmus</li>
+</ul>
+
+<h3>
+<a id="umfang" class="anchor" href="#umfang" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Umfang</h3>
+
+<ul>
+<li>[x] C++-Code in dem Gruppen-GitHub-Repository</li>
+<li>[x] moderner C++-Code (C++11, C++14)</li>
+</ul>
+
+<p><code>set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++11 -pthread")</code> </p>
+
+<ul>
+<li>[x] Unittests mit “vernünftiger” Code-Abdeckung</li>
+<li>[x] Website für das Projekt inkl. Sourcecode-Dokumentation (Doxygen)</li>
+<li>[x] Anbindung an Travis CI</li>
+</ul>
+
+<p><code>https://travis-ci.org/algdat/grp07-algdatII</code></p>
+
+<ul>
+<li>[x] Projekt übersetzen</li>
+<li>[x] Unittests ausführen</li>
+<li>[ ] evtl. Website für das Projekt bauen</li>
 </ul>
 
 <h2>
@@ -80,6 +117,25 @@ Datei im Root mit gefundenen (markierten) Wörtern des Textes.</p>
 cd build
 cmake .. &amp;&amp; make &amp;&amp; make test 
 </code></pre>
+
+<h2>
+<a id="anwendung-starten" class="anchor" href="#anwendung-starten" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a name="start-application"></a>Anwendung starten</h2>
+
+<p>Nach dem Start der Anwendung gibt es zwei Möglichkeiten. Es besteht die Möglichkeit eine angegebene Datei nach einem Pattern (Suchbegriff) zu durchsuchen, 
+oder den Performance Vergleich zu starten. Beim wählen des Performance Vergleich sollten zuvor im Konstruktor der Klasse PerformanceChecker.cpp die gewünschten 
+Files und Suchbegriffe, sowie die Anzahl der Messungen eingetragen werden. Nach dem ausführen wurden im aktuellen Ordner die entsprechenden HTML Output Files
+angelegt (<strong><em>pattern</em></strong>.html oder performance_output.html) </p>
+
+<p><img src="https://github.com/algdat/grp07-algdatII/blob/master/Search.JPG" alt="alt text" title="Suche in Text HTML Output">
+<img src="https://github.com/algdat/grp07-algdatII/blob/master/PerformanceChecker.jpg" alt="alt text" title="PerformanceChecker HTML Output"></p>
+
+<h2>
+<a id="resources" class="anchor" href="#resources" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a name="resources"></a>Resources</h2>
+
+<p><a href="http://openbook.rheinwerk-verlag.de/c_von_a_bis_z/022_c_algorithmen_006.htm">http://openbook.rheinwerk-verlag.de/c_von_a_bis_z/022_c_algorithmen_006.htm</a><br>
+<a href="http://algs4.cs.princeton.edu/lectures/53SubstringSearch.pdf">http://algs4.cs.princeton.edu/lectures/53SubstringSearch.pdf</a><br>
+<a href="http://stackoverflow.com/questions/30548170/dfa-construction-in-knuth-morris-pratt-algorithm?rq=1">http://stackoverflow.com/questions/30548170/dfa-construction-in-knuth-morris-pratt-algorithm?rq=1</a><br>
+<a href="http://stackoverflow.com/questions/4263200/does-kmp-algorithm-peforms-less-comparisons-than-the-simplified-boyer-moore-algo?rq=1">http://stackoverflow.com/questions/4263200/does-kmp-algorithm-peforms-less-comparisons-than-the-simplified-boyer-moore-algo?rq=1</a></p>
 
 <h2>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a name="license"></a>License</h2>
