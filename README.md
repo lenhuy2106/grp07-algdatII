@@ -17,6 +17,7 @@ Implementierung und Vergleich von drei Algorithmen auf Laufzeit.
 * [Team Members](#team-members)
 * [Introduction](#intro)
 * [Getting started](#getting-started)
++ [Start Application](#start-application)
 * [Resources](#resources)
 * [License](#license)
 
@@ -63,6 +64,12 @@ mkdir build
 cd build
 cmake .. && make && make test 
 ```
+
+## <a name="start-application"></a>Anwendung starten
+Nach dem Start der Anwendung gibt es zwei Möglichkeiten. Es besteht die Möglichkeit eine angegebene Datei nach einem Pattern zu durchsuchen, 
+oder den Performance Vergleich zu starten. Beim wählen des Performance Vergleich sollten zuvor im Konstruktor PerformanceChecker.cpp die gewünschten 
+Files und Suchbegriffe, sowie die Anzahl der Messungen eingetragen werden. Nach dem ausführen wurden im aktuelleb Ordner die entsprechenden HTML Output Files
+angelegt (performance_output.html oder <pattern>.html)
 
 ## <a name="resources"></a>Resources
 http://openbook.rheinwerk-verlag.de/c_von_a_bis_z/022_c_algorithmen_006.htm  
